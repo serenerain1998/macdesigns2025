@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { 
   ArrowRight, Users, Target, Zap, TrendingUp, Brain, Eye, Lightbulb, 
-  Search, MousePointer, Play, Pause, RotateCcw, ChevronRight, 
+  Search, MousePointer, RotateCcw, ChevronRight, 
   BarChart3, Layers, Code, Sparkles, Heart, Shield, 
   Timer, Award, Users2, CheckCircle2, ArrowUpRight, ExternalLink,
   Calendar, Clock, Star, TrendingDown, Activity, Cpu, Database
@@ -412,7 +412,6 @@ export function CaseStudiesSection() {
   const [selectedStudy, setSelectedStudy] = useState(0);
   const [activeTab, setActiveTab] = useState('overview');
   const [hoveredMetric, setHoveredMetric] = useState<any>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
   const { ref: sectionRef, isVisible } = useIntersectionObserver(0.2);
 
   const currentStudy = caseStudies[selectedStudy];
@@ -426,10 +425,6 @@ export function CaseStudiesSection() {
   const handleMetricHover = useCallback((metric: any) => {
     setHoveredMetric(metric);
   }, []);
-
-  const togglePlay = useCallback(() => {
-    setIsPlaying(!isPlaying);
-  }, [isPlaying]);
 
   return (
     <section ref={sectionRef} className="py-20 bg-gray-900 relative overflow-hidden">
@@ -568,19 +563,7 @@ export function CaseStudiesSection() {
                         {currentStudy.subtitle}
                       </motion.p>
                     </div>
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <Button 
-                        variant="outline" 
-                        size="sm" 
-                        onClick={togglePlay}
-                        className="border-gray-600 text-gray-300 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-500 hover:text-white hover:border-transparent transition-all duration-300"
-                      >
-                        {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
-                      </Button>
-                    </motion.div>
+
                   </div>
                 </CardHeader>
               
