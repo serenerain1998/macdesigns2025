@@ -360,7 +360,7 @@ const CarouselItemComponent = ({ project, index, isActive }: {
 
         {/* Case Study Modal */}
         <Dialog open={showModal} onOpenChange={setShowModal}>
-          <DialogContent className="max-w-7xl w-[98vw] max-h-[90vh] overflow-y-auto bg-gray-900 dark:bg-gray-900 border-gray-700 dark:border-gray-700 shadow-2xl">
+          <DialogContent className="w-[95vw] h-[90vh] max-w-none overflow-y-auto bg-gray-900 dark:bg-gray-900 border-gray-700 dark:border-gray-700 shadow-2xl">
             <DialogHeader>
               <DialogTitle className="text-3xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-2">
                 {project.title}
@@ -422,14 +422,14 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                   {Object.entries(project.metrics).map(([key, value], i) => (
                     <motion.div
                       key={key}
-                      className="text-center p-6 bg-gradient-to-br from-cyan-900/30 to-blue-900/30 rounded-lg border border-cyan-700/50 hover:border-cyan-600 transition-colors"
+                      className="flex flex-col items-center justify-center text-center p-6 bg-gradient-to-br from-cyan-900/30 to-blue-900/30 rounded-lg border border-cyan-700/50 hover:border-cyan-600 transition-colors min-h-[120px]"
                       whileHover={{ scale: 1.05, y: -2 }}
                       transition={{ delay: i * 0.1 }}
                     >
-                      <div className="text-3xl font-bold text-cyan-400 mb-2">
+                      <div className="text-3xl font-bold text-cyan-400 mb-3">
                         {value}
                       </div>
-                      <div className="text-sm text-gray-300 capitalize">
+                      <div className="text-sm text-gray-300 capitalize leading-tight">
                         {key.replace(/([A-Z])/g, ' $1').trim()}
                       </div>
                     </motion.div>
