@@ -360,31 +360,40 @@ const CarouselItemComponent = ({ project, index, isActive }: {
 
         {/* Case Study Modal */}
         <Dialog open={showModal} onOpenChange={setShowModal}>
-          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-            <DialogHeader>
-              <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+          <DialogContent className="max-w-6xl w-[95vw] max-h-[90vh] overflow-y-auto bg-gray-900 dark:bg-gray-900 border-gray-700 dark:border-gray-700 shadow-2xl">
+            <DialogHeader className="relative">
+              <DialogTitle className="text-3xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-2">
                 {project.title}
               </DialogTitle>
+              <p className="text-gray-400 text-lg">{project.subtitle}</p>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setShowModal(false)}
+                className="absolute top-0 right-0 text-gray-400 hover:text-white hover:bg-gray-800"
+              >
+                <X className="w-5 h-5" />
+              </Button>
             </DialogHeader>
             
-            <div className="space-y-6">
+            <div className="space-y-8">
               {/* Project Overview */}
               <div>
-                <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">Overview</h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                <h3 className="text-xl font-semibold mb-4 text-white border-b border-gray-700 pb-2">Overview</h3>
+                <p className="text-gray-300 leading-relaxed text-lg">
                   {project.fullDescription}
                 </p>
               </div>
 
               {/* Technologies Used */}
               <div>
-                <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">Technologies Used</h3>
-                <div className="flex flex-wrap gap-2">
+                <h3 className="text-xl font-semibold mb-4 text-white border-b border-gray-700 pb-2">Technologies Used</h3>
+                <div className="flex flex-wrap gap-3">
                   {project.technologies.map((tech) => (
                     <Badge 
                       key={tech}
                       variant="outline"
-                      className="bg-cyan-50 dark:bg-cyan-900/20 border-cyan-200 dark:border-cyan-800 text-cyan-700 dark:text-cyan-300"
+                      className="bg-cyan-900/30 border-cyan-600 text-cyan-300 hover:bg-cyan-800/40 px-4 py-2 text-sm"
                     >
                       {tech}
                     </Badge>
@@ -394,21 +403,21 @@ const CarouselItemComponent = ({ project, index, isActive }: {
 
               {/* Key Achievements */}
               <div>
-                <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white flex items-center">
-                  <Award className="w-4 h-4 mr-2 text-cyan-500" />
+                <h3 className="text-xl font-semibold mb-4 text-white border-b border-gray-700 pb-2 flex items-center">
+                  <Award className="w-5 h-5 mr-3 text-cyan-400" />
                   Key Achievements
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {project.highlights.map((highlight, i) => (
                     <motion.div
                       key={i}
-                      className="flex items-start space-x-3 p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg"
+                      className="flex items-start space-x-3 p-4 bg-gray-800/50 border border-gray-700 rounded-lg hover:bg-gray-800/70 transition-colors"
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.1 }}
                     >
-                      <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-gray-700 dark:text-gray-300">{highlight}</span>
+                      <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-300">{highlight}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -416,19 +425,19 @@ const CarouselItemComponent = ({ project, index, isActive }: {
 
               {/* Metrics */}
               <div>
-                <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">Key Metrics</h3>
+                <h3 className="text-xl font-semibold mb-4 text-white border-b border-gray-700 pb-2">Key Metrics</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {Object.entries(project.metrics).map(([key, value], i) => (
                     <motion.div
                       key={key}
-                      className="text-center p-4 bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20 rounded-lg border border-cyan-200/50 dark:border-cyan-700/50"
+                      className="text-center p-6 bg-gradient-to-br from-cyan-900/30 to-blue-900/30 rounded-lg border border-cyan-700/50 hover:border-cyan-600 transition-colors"
                       whileHover={{ scale: 1.05, y: -2 }}
                       transition={{ delay: i * 0.1 }}
                     >
-                      <div className="text-2xl font-bold text-cyan-600 dark:text-cyan-400">
+                      <div className="text-3xl font-bold text-cyan-400 mb-2">
                         {value}
                       </div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400 capitalize">
+                      <div className="text-sm text-gray-300 capitalize">
                         {key.replace(/([A-Z])/g, ' $1').trim()}
                       </div>
                     </motion.div>
@@ -438,18 +447,18 @@ const CarouselItemComponent = ({ project, index, isActive }: {
 
               {/* Process */}
               <div>
-                <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">Process</h3>
-                <div className="space-y-2">
+                <h3 className="text-xl font-semibold mb-4 text-white border-b border-gray-700 pb-2">Process</h3>
+                <div className="space-y-3">
                   {project.process.map((step, index) => (
                     <motion.div
                       key={index}
-                      className="flex items-start space-x-3"
+                      className="flex items-start space-x-4 p-3 bg-gray-800/30 rounded-lg hover:bg-gray-800/50 transition-colors"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
                     >
-                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-400 flex-shrink-0 mt-2" />
-                      <span className="text-gray-700 dark:text-gray-300">{step}</span>
+                      <div className="w-3 h-3 rounded-full bg-gradient-to-r from-cyan-400 to-blue-400 flex-shrink-0 mt-2" />
+                      <span className="text-gray-300">{step}</span>
                     </motion.div>
                   ))}
                 </div>
