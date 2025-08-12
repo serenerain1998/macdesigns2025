@@ -18,6 +18,7 @@ import { CaseStudiesSection } from './components/CaseStudiesSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { AIAvatar } from './components/AIAvatar';
+import { Toaster } from './components/ui/sonner';
 
 // Error Fallback Component
 const ErrorFallback = ({ error, resetErrorBoundary }: { 
@@ -578,7 +579,8 @@ function AppContent() {
         <AIAvatar />
       </motion.div>
 
-
+      {/* Toast Notifications */}
+      <Toaster />
     </motion.div>
   );
 }

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion';
 import { ArrowRight, Download, Sparkles, Zap, Target, Award } from 'lucide-react';
 import { Button } from './ui/button';
+import { toast } from 'sonner';
 
 // React Bits Floating Orb Component
 const FloatingOrb = ({ size, color, delay, duration, position }: {
@@ -155,6 +156,7 @@ export function HeroSection() {
   const containerRef = useRef(null);
   const { scrollY } = useScroll();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isDownloading, setIsDownloading] = useState(false);
   
   // Parallax transforms
   const y = useTransform(scrollY, [0, 500], [0, -150]);
@@ -333,11 +335,62 @@ export function HeroSection() {
             <Button 
               variant="outline" 
               size="lg"
+              disabled={isDownloading}
+              onClick={async () => {
+                try {
+                  setIsDownloading(true);
+                  toast.success('Starting download...', {
+                    description: 'Your PDF resume is being prepared for download.',
+                    duration: 3000,
+                  });
+                  
+                  // Create a temporary link element to trigger download
+                  const link = document.createElement('a');
+                  link.href = '/Melissa_Casole_UXResume2025.pdf';
+                  link.download = 'Melissa_Casole_UXResume2025.pdf';
+                  
+                  // Append to body, click, and remove
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                  
+                  // Show success toast and reset loading state
+                  setTimeout(() => {
+                    setIsDownloading(false);
+                    toast.success('Download complete!', {
+                      description: 'Your PDF resume has been downloaded successfully.',
+                      duration: 4000,
+                    });
+                  }, 1000);
+                } catch (error) {
+                  console.error('Download failed:', error);
+                  setIsDownloading(false);
+                  toast.error('Download failed', {
+                    description: 'There was an issue downloading your PDF resume. Please try again.',
+                    duration: 5000,
+                  });
+                }
+              }}
               className="relative group border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-cyan-500 dark:hover:border-cyan-400 px-8 py-4 rounded-full text-lg font-semibold overflow-hidden bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm"
             >
               <span className="relative z-10 flex items-center">
-                <Download size={20} className="mr-2" />
-                Download Resume
+                {isDownloading ? (
+                  <>
+                    <motion.div
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                      className="mr-2"
+                    >
+                      <Download size={20} />
+                    </motion.div>
+                    <span className="animate-pulse">Downloading...</span>
+                  </>
+                ) : (
+                  <>
+                    <Download size={20} className="mr-2" />
+                    Download Resume
+                  </>
+                )}
               </span>
               
               {/* Hover background */}

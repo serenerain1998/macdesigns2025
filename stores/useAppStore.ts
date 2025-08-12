@@ -13,9 +13,7 @@ interface AppStore {
   isAnimationPaused: boolean;
   prefersReducedMotion: boolean;
 
-  // Theme state
-  theme: 'light' | 'dark';
-  toggleTheme: () => void;
+
 
   // Navigation state
   isScrolled: boolean;
@@ -60,20 +58,7 @@ export const useAppStore = create<AppStore>()(
       isAnimationPaused: false,
       prefersReducedMotion: false,
 
-      // Theme state
-      theme: 'dark',
-      toggleTheme: () => {
-        set((state) => {
-          const newTheme = state.theme === 'light' ? 'dark' : 'light';
-          // Update DOM class
-          if (newTheme === 'dark') {
-            document.documentElement.classList.add('dark');
-          } else {
-            document.documentElement.classList.remove('dark');
-          }
-          return { theme: newTheme };
-        });
-      },
+
 
       // Navigation state
       isScrolled: false,
@@ -162,7 +147,6 @@ export const useAppStore = create<AppStore>()(
       name: 'mac-designs-store',
       storage: createJSONStorage(() => sessionStorage),
       partialize: (state) => ({
-        theme: state.theme,
         isAuthenticated: state.isAuthenticated,
       }),
     }

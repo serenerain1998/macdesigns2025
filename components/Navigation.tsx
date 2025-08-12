@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sparkles, Zap } from 'lucide-react';
 import { Button } from './ui/button';
-import { ThemeToggle } from './ThemeToggle';
+
 
 // Enhanced smooth scroll function
 const smoothScrollToSection = (sectionId: string) => {
@@ -233,19 +233,7 @@ const MobileMenu = ({
             </nav>
 
             {/* Footer */}
-            <motion.div
-              className="absolute bottom-6 left-6 right-6 pt-6 border-t border-gray-200 dark:border-gray-700"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-            >
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-500 dark:text-gray-400">
-                  Theme
-                </span>
-                <ThemeToggle />
-              </div>
-            </motion.div>
+
           </motion.div>
         </>
       )}
@@ -444,11 +432,6 @@ export function Navigation() {
 
             {/* Right Side Actions */}
             <div className="flex items-center space-x-4">
-              {/* Theme Toggle - Desktop */}
-              <div className="hidden md:block">
-                <ThemeToggle />
-              </div>
-
               {/* Contact Button with Smooth Scroll */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}

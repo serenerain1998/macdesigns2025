@@ -4,6 +4,7 @@ import { Mail, Phone, MapPin, Linkedin, Download, Star, Award, Zap, ArrowRight, 
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
+import { toast } from 'sonner';
 
 
 const achievements = [
@@ -77,36 +78,38 @@ export function ContactSection() {
   };
 
   const handleResumeDownload = async () => {
-    setIsDownloading(true);
-    
     try {
-      // Check if file exists first
-      const response = await fetch('/assets/Melissa_Casole_UX_Resume.pdf', { method: 'HEAD' });
+      setIsDownloading(true);
+      toast.success('Starting download...', {
+        description: 'Your PDF resume is being prepared for download.',
+        duration: 3000,
+      });
       
-      if (response.ok) {
-        // File exists, proceed with download
-        const link = document.createElement('a');
-        link.href = '/assets/Melissa_Casole_UX_Resume.pdf';
-        link.download = 'Melissa_Casole_UX_Resume.pdf';
-        link.target = '_blank';
-        
-        // Trigger the download
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        
-        console.log('Resume download initiated');
-      } else {
-        // File doesn't exist, show helpful message
-        alert('Resume file not found. Please contact Melissa directly for her latest resume.');
-        console.log('Resume file not available at /assets/Melissa_Casole_UX_Resume.pdf');
-      }
+      // Create a temporary link element to trigger download
+      const link = document.createElement('a');
+      link.href = '/Melissa_Casole_UXResume2025.pdf';
+      link.download = 'Melissa_Casole_UXResume2025.pdf';
+      
+      // Append to body, click, and remove
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Show success toast and reset loading state
+      setTimeout(() => {
+        setIsDownloading(false);
+        toast.success('Download complete!', {
+          description: 'Your PDF resume has been downloaded successfully.',
+          duration: 4000,
+        });
+      }, 1000);
     } catch (error) {
       console.error('Download failed:', error);
-      // Fallback: show contact information
-      alert('Download unavailable. Please email melissa.casole@yahoo.com to request the latest resume.');
-    } finally {
       setIsDownloading(false);
+      toast.error('Download failed', {
+        description: 'There was an issue downloading your PDF resume. Please try again.',
+        duration: 5000,
+      });
     }
   };
 
