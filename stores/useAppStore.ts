@@ -1,8 +1,9 @@
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 
-// Animation state interface
-interface AnimationState {
+// Combined store interface
+interface AppStore {
+  // Animation state
   isLoading: boolean;
   loadingProgress: number;
   sectionsInView: Set<string>;
@@ -11,16 +12,12 @@ interface AnimationState {
   mousePosition: { x: number; y: number };
   isAnimationPaused: boolean;
   prefersReducedMotion: boolean;
-}
 
-// Theme state interface
-interface ThemeState {
+  // Theme state
   theme: 'light' | 'dark';
   toggleTheme: () => void;
-}
 
-// Navigation state interface
-interface NavigationState {
+  // Navigation state
   isScrolled: boolean;
   activeSection: string;
   isMobileMenuOpen: boolean;
@@ -28,17 +25,13 @@ interface NavigationState {
   setActiveSection: (section: string) => void;
   toggleMobileMenu: () => void;
   closeMobileMenu: () => void;
-}
 
-// Authentication state interface
-interface AuthState {
+  // Authentication state
   isAuthenticated: boolean;
   authenticate: () => void;
   logout: () => void;
-}
 
-// UI interaction state interface
-interface UIState {
+  // UI interaction state
   hoveredElements: Set<string>;
   expandedCards: Set<string>;
   activeModals: Set<string>;
@@ -47,12 +40,11 @@ interface UIState {
   toggleCardExpanded: (id: string) => void;
   openModal: (id: string) => void;
   closeModal: (id: string) => void;
-  addNotification: (notification: Omit<UIState['notifications'][0], 'id' | 'timestamp'>) => void;
+  addNotification: (notification: Omit<AppStore['notifications'][0], 'id' | 'timestamp'>) => void;
   removeNotification: (id: string) => void;
 }
 
-// Combined store interface
-interface AppStore extends AnimationState, ThemeState, NavigationState, AuthState, UIState {}
+
 
 // Main Zustand store with persistence
 export const useAppStore = create<AppStore>()(

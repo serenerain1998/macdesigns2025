@@ -179,9 +179,10 @@ export function HeroSection() {
 
     const container = containerRef.current;
     if (container) {
-      container.addEventListener('mousemove', handleMouseMove);
-      return () => container.removeEventListener('mousemove', handleMouseMove);
+      (container as HTMLElement).addEventListener('mousemove', handleMouseMove);
+      return () => (container as HTMLElement).removeEventListener('mousemove', handleMouseMove);
     }
+    return undefined;
   }, []);
 
   const morphingWords = ['Designer', 'Strategist', 'Innovator', 'Leader'];

@@ -238,7 +238,7 @@ export const useFormState = (initialValues: Record<string, any>) => {
     setValues(prev => ({ ...prev, [field]: value }));
     // Clear error when user starts typing
     if (errors[field]) {
-      setErrors(prev => ({ ...prev, [field]: undefined }));
+      setErrors(prev => ({ ...prev, [field]: '' }));
     }
   }, [errors]);
 

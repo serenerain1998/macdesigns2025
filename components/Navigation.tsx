@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sparkles, Zap } from 'lucide-react';
 import { Button } from './ui/button';
 import { ThemeToggle } from './ThemeToggle';
@@ -260,11 +260,14 @@ export function Navigation() {
   const { scrollY } = useScroll();
 
   // Handle scroll effects - trigger background sooner for better visibility
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const viewportHeight = window.innerHeight;
-    const triggerPoint = viewportHeight * 0.15; // 15% of viewport height for earlier trigger
-    setIsScrolled(latest > triggerPoint);
-  });
+  useEffect(() => {
+    const unsubscribe = scrollY.on('change', (latest) => {
+      const viewportHeight = window.innerHeight;
+      const triggerPoint = viewportHeight * 0.15; // 15% of viewport height for earlier trigger
+      setIsScrolled(latest > triggerPoint);
+    });
+    return unsubscribe;
+  }, [scrollY]);
 
   // Enhanced active section detection with intersection observer
   useEffect(() => {
@@ -487,7 +490,7 @@ export function Navigation() {
         <motion.div
           className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500"
           style={{
-            width: useMotionValueEvent(scrollY, "change", (latest) => {
+            width: useTransform(scrollY, (latest) => {
               const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
               return `${(latest / maxScroll) * 100}%`;
             }),

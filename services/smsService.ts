@@ -251,7 +251,7 @@ export const checkSMSServiceHealth = async (): Promise<{
     return result;
   }
 
-  result.mode = 'production';
+  result.mode = 'demo';
 
   // Check database connection
   try {
