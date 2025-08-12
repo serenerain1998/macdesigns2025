@@ -206,7 +206,7 @@
   }
 
   /* Prevent any fixed positioning issues that block scroll */
-  .fixed {
+  .fixed:not([data-slot="dialog-content"]) {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
   }
@@ -377,6 +377,15 @@
   
   /* Firefox mobile */
   scrollbar-width: none;
+  
+  /* Ensure modal stays centered on mobile */
+  [data-slot="dialog-content"] {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 9999 !important;
+  }
 }
 
 /* Focus styles for accessibility */

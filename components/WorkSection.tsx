@@ -360,7 +360,7 @@ const CarouselItemComponent = ({ project, index, isActive }: {
 
         {/* Case Study Modal */}
         <Dialog open={showModal} onOpenChange={setShowModal}>
-          <DialogContent className="w-[95vw] h-[90vh] max-w-none overflow-y-auto bg-gray-900 dark:bg-gray-900 border-gray-700 dark:border-gray-700 shadow-2xl">
+          <DialogContent className="w-[95vw] h-[90vh] max-w-none overflow-y-auto bg-gray-900 dark:bg-gray-900 border-gray-700 dark:border-gray-700 shadow-2xl !fixed !top-[50%] !left-[50%] !transform !-translate-x-1/2 !-translate-y-1/2">
             <DialogHeader>
               <DialogTitle className="text-3xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-2">
                 {project.title}
