@@ -321,13 +321,14 @@ export function HeroSection() {
           </motion.p>
         </motion.div>
 
-        {/* Enhanced CTA Button */}
+        {/* Enhanced CTA Buttons */}
         <motion.div 
-          className="flex justify-center items-center mb-16"
+          className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-16"
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.3 }}
         >
+          {/* Download Resume Button */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -391,6 +392,40 @@ export function HeroSection() {
                     Download Resume
                   </>
                 )}
+              </span>
+              
+              {/* Hover background */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                initial={{ scale: 0 }}
+                whileHover={{ scale: 1 }}
+                transition={{ duration: 0.3 }}
+              />
+            </Button>
+          </motion.div>
+
+          {/* View Dribbble Button */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Button 
+              variant="outline" 
+              size="lg"
+              onClick={() => {
+                window.open('https://dribbble.com/melissacasole', '_blank');
+              }}
+              className="relative group border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-cyan-500 dark:hover:border-cyan-400 px-8 py-4 rounded-full text-lg font-semibold overflow-hidden bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm"
+            >
+              <span className="relative z-10 flex items-center">
+                <svg 
+                  className="w-5 h-5 mr-2" 
+                  viewBox="0 0 24 24" 
+                  fill="currentColor"
+                >
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221c-1.97 9.28-.145.658-.537 1.362-1.051 1.362-.402 0-.604-.199-.604-.598 0-.199.1-.598.1-.598l1.97-9.28c-.145-.658.537-1.362 1.051-1.362.402 0 .604.199.604.598 0 .199-.1.598-.1.598zM12 15.599c-1.594 0-2.884-.598-2.884-1.362 0-.598.402-1.362 1.051-1.362.402 0 .604.199.604.598 0 .199-.1.598-.1.598l-1.97 9.28c-.145.658-.537 1.362-1.051 1.362-.402 0-.604-.199-.604-.598 0-.199.1-.598.1-.598l1.97-9.28c.145.658.537 1.362 1.051 1.362.402 0 .604.199.604.598 0 .199-.1.598-.1.598z"/>
+                </svg>
+                View my Dribbble
               </span>
               
               {/* Hover background */}
