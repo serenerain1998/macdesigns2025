@@ -429,129 +429,265 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                 </div>
               </div>
 
-              {/* Case Study Visuals - Image/Video Placeholders */}
-              <div className="bg-gradient-to-r from-purple-900/20 to-pink-900/20 rounded-xl p-6 border border-purple-700/30">
-                <h3 className="text-2xl font-bold mb-6 text-white flex items-center">
-                  <Eye className="w-6 h-6 mr-3 text-purple-400" />
-                  Case Study Visuals
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {/* Placeholder 1 */}
-                  <motion.div
-                    className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300"
-                    whileHover={{ scale: 1.02, y: -5 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 }}
-                  >
-                    <div className="aspect-video bg-gradient-to-br from-purple-500/30 to-pink-500/30 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center">
-                          <Eye className="w-8 h-8 text-white" />
-                        </div>
-                        <p className="text-purple-200 font-medium text-sm">Case Study Image/Video 1</p>
-                        <p className="text-purple-300 text-xs mt-1">Click to add your content</p>
+              {/* Project-Specific Case Study Visuals */}
+              {project.id === 'surgical-technology-interface' ? (
+                <div className="bg-gradient-to-r from-purple-900/20 to-pink-900/20 rounded-xl p-6 border border-purple-700/30">
+                  <h3 className="text-2xl font-bold mb-6 text-white flex items-center">
+                    <Eye className="w-6 h-6 mr-3 text-purple-400" />
+                    Horizon Control System Visuals
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {/* Arduino Integration Video */}
+                    <motion.div
+                      className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300"
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.1 }}
+                    >
+                      <div className="aspect-video bg-gradient-to-br from-purple-500/30 to-pink-500/30 flex items-center justify-center">
+                        <video 
+                          className="w-full h-full object-cover"
+                          autoPlay 
+                          muted 
+                          loop 
+                          playsInline
+                        >
+                          <source src="/assets/videos/HorizonControl/hc_arduino.MOV" type="video/quicktime" />
+                          <source src="/assets/videos/HorizonControl/hc_arduino.MOV" type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
                       </div>
-                    </div>
-                    <div className="p-3 bg-purple-900/50">
-                      <p className="text-purple-200 text-sm font-medium">Project Overview</p>
-                      <p className="text-purple-300 text-xs">Add your custom photography or MP4 video</p>
-                    </div>
-                  </motion.div>
+                      <div className="p-3 bg-purple-900/50">
+                        <p className="text-purple-200 text-sm font-medium">Arduino Integration</p>
+                        <p className="text-purple-300 text-xs">Real-time Arduino board connection to medical cameras</p>
+                      </div>
+                    </motion.div>
 
-                  {/* Placeholder 2 */}
-                  <motion.div
-                    className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-600/20 to-cyan-600/20 border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300"
-                    whileHover={{ scale: 1.02, y: -5 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                  >
-                    <div className="aspect-video bg-gradient-to-br from-blue-500/30 to-cyan-500/30 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full flex items-center justify-center">
-                          <Code className="w-8 h-8 text-white" />
-                        </div>
-                        <p className="text-blue-200 font-medium text-sm">Case Study Image/Video 2</p>
-                        <p className="text-blue-300 text-xs mt-1">Click to add your content</p>
+                    {/* 3D Model Video */}
+                    <motion.div
+                      className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-600/20 to-cyan-600/20 border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300"
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      <div className="aspect-video bg-gradient-to-br from-blue-500/30 to-cyan-500/30 flex items-center justify-center">
+                        <video 
+                          className="w-full h-full object-cover"
+                          autoPlay 
+                          muted 
+                          loop 
+                          playsInline
+                        >
+                          <source src="/assets/videos/HorizonControl/3dModel.mp4" type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
                       </div>
-                    </div>
-                    <div className="p-3 bg-blue-900/50">
-                      <p className="text-blue-200 text-sm font-medium">Process & Methodology</p>
-                      <p className="text-blue-300 text-xs">Add your custom photography or MP4 video</p>
-                    </div>
-                  </motion.div>
+                      <div className="p-3 bg-blue-900/50">
+                        <p className="text-blue-200 text-sm font-medium">3D Model Visualization</p>
+                        <p className="text-blue-300 text-xs">Interactive 3D model for surgical planning</p>
+                      </div>
+                    </motion.div>
 
-                  {/* Placeholder 3 */}
-                  <motion.div
-                    className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-green-600/20 to-emerald-600/20 border border-green-500/30 hover:border-green-400/50 transition-all duration-300"
-                    whileHover={{ scale: 1.02, y: -5 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 }}
-                  >
-                    <div className="aspect-video bg-gradient-to-br from-green-500/30 to-emerald-500/30 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-green-400 to-emerald-400 rounded-full flex items-center justify-center">
-                          <Target className="w-8 h-8 text-white" />
-                        </div>
-                        <p className="text-green-200 font-medium text-sm">Case Study Image/Video 3</p>
-                        <p className="text-green-300 text-xs mt-1">Click to add your content</p>
+                    {/* Wheel Control Video */}
+                    <motion.div
+                      className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-green-600/20 to-emerald-600/20 border border-green-500/30 hover:border-green-400/50 transition-all duration-300"
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      <div className="aspect-video bg-gradient-to-br from-green-500/30 to-emerald-500/30 flex items-center justify-center">
+                        <video 
+                          className="w-full h-full object-cover"
+                          autoPlay 
+                          muted 
+                          loop 
+                          playsInline
+                        >
+                          <source src="/assets/videos/HorizonControl/hc_wheel.mp4" type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
                       </div>
-                    </div>
-                    <div className="p-3 bg-green-900/50">
-                      <p className="text-green-200 text-sm font-medium">Results & Impact</p>
-                      <p className="text-green-300 text-xs">Add your custom photography or MP4 video</p>
-                    </div>
-                  </motion.div>
+                      <div className="p-3 bg-green-900/50">
+                        <p className="text-green-200 text-sm font-medium">Control Interface</p>
+                        <p className="text-green-300 text-xs">Ergonomic wheel control for surgical precision</p>
+                      </div>
+                    </motion.div>
 
-                  {/* Placeholder 4 */}
-                  <motion.div
-                    className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-orange-600/20 to-red-600/20 border border-orange-500/30 hover:border-orange-400/50 transition-all duration-300"
-                    whileHover={{ scale: 1.02, y: -5 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
-                  >
-                    <div className="aspect-video bg-gradient-to-br from-orange-500/30 to-red-500/30 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-orange-400 to-red-400 rounded-full flex items-center justify-center">
-                          <Users className="w-8 h-8 text-white" />
-                        </div>
-                        <p className="text-orange-200 font-medium text-sm">Case Study Image/Video 4</p>
-                        <p className="text-orange-300 text-xs mt-1">Click to add your content</p>
+                    {/* Live Case Monitor Image */}
+                    <motion.div
+                      className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-orange-600/20 to-red-600/20 border border-orange-500/30 hover:border-orange-400/50 transition-all duration-300"
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.4 }}
+                    >
+                      <div className="aspect-video bg-gradient-to-br from-orange-500/30 to-red-500/30 flex items-center justify-center">
+                        <img 
+                          src="/assets/videos/HorizonControl/Monitor - LIVE CASE - HC_ Unlocked, Recording_ On, Nano.jpg"
+                          alt="Live Case Monitor Interface"
+                          className="w-full h-full object-cover"
+                        />
                       </div>
-                    </div>
-                    <div className="p-3 bg-orange-900/50">
-                      <p className="text-orange-200 text-sm font-medium">User Testing & Feedback</p>
-                      <p className="text-orange-300 text-xs">Add your custom photography or MP4 video</p>
-                    </div>
-                  </motion.div>
+                      <div className="p-3 bg-orange-900/50">
+                        <p className="text-orange-200 text-sm font-medium">Live Case Monitor</p>
+                        <p className="text-orange-300 text-xs">Real-time surgical interface during procedures</p>
+                      </div>
+                    </motion.div>
 
-                  {/* Placeholder 5 */}
-                  <motion.div
-                    className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-indigo-600/20 to-purple-600/20 border border-indigo-500/30 hover:border-indigo-400/50 transition-all duration-300"
-                    whileHover={{ scale: 1.02, y: -5 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
-                  >
-                    <div className="aspect-video bg-gradient-to-br from-indigo-500/30 to-purple-500/30 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full flex items-center justify-center">
-                          <Zap className="w-8 h-8 text-white" />
-                        </div>
-                        <p className="text-indigo-200 font-medium text-sm">Case Study Image/Video 5</p>
-                        <p className="text-indigo-300 text-xs mt-1">Click to add your content</p>
+                    {/* Trimmed Demo Video */}
+                    <motion.div
+                      className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-indigo-600/20 to-purple-600/20 border border-indigo-500/30 hover:border-indigo-400/50 transition-all duration-300"
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5 }}
+                    >
+                      <div className="aspect-video bg-gradient-to-br from-indigo-500/30 to-purple-500/30 flex items-center justify-center">
+                        <video 
+                          className="w-full h-full object-cover"
+                          autoPlay 
+                          muted 
+                          loop 
+                          playsInline
+                        >
+                          <source src="/assets/videos/HorizonControl/hd_trimmed.mp4" type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
                       </div>
-                    </div>
-                    <div className="p-3 bg-indigo-900/50">
-                      <p className="text-indigo-200 text-sm font-medium">Technical Implementation</p>
-                      <p className="text-indigo-300 text-xs">Add your custom photography or MP4 video</p>
-                    </div>
-                  </motion.div>
+                      <div className="p-3 bg-indigo-900/50">
+                        <p className="text-indigo-200 text-sm font-medium">System Demo</p>
+                        <p className="text-indigo-300 text-xs">Complete system demonstration and workflow</p>
+                      </div>
+                    </motion.div>
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className="bg-gradient-to-r from-purple-900/20 to-pink-900/20 rounded-xl p-6 border border-purple-700/30">
+                  <h3 className="text-2xl font-bold mb-6 text-white flex items-center">
+                    <Eye className="w-6 h-6 mr-3 text-purple-400" />
+                    Case Study Visuals
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {/* Placeholder 1 */}
+                    <motion.div
+                      className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300"
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.1 }}
+                    >
+                      <div className="aspect-video bg-gradient-to-br from-purple-500/30 to-pink-500/30 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center">
+                            <Eye className="w-8 h-8 text-white" />
+                          </div>
+                          <p className="text-purple-200 font-medium text-sm">Case Study Image/Video 1</p>
+                          <p className="text-purple-300 text-xs mt-1">Click to add your content</p>
+                        </div>
+                      </div>
+                      <div className="p-3 bg-purple-900/50">
+                        <p className="text-purple-200 text-sm font-medium">Project Overview</p>
+                        <p className="text-purple-300 text-xs">Add your custom photography or MP4 video</p>
+                      </div>
+                    </motion.div>
+
+                    {/* Placeholder 2 */}
+                    <motion.div
+                      className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-600/20 to-cyan-600/20 border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300"
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      <div className="aspect-video bg-gradient-to-br from-blue-500/30 to-cyan-500/30 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full flex items-center justify-center">
+                            <Code className="w-8 h-8 text-white" />
+                          </div>
+                          <p className="text-blue-200 font-medium text-sm">Case Study Image/Video 2</p>
+                          <p className="text-blue-300 text-xs mt-1">Click to add your content</p>
+                        </div>
+                      </div>
+                      <div className="p-3 bg-blue-900/50">
+                        <p className="text-blue-200 text-sm font-medium">Process & Methodology</p>
+                        <p className="text-blue-300 text-xs">Add your custom photography or MP4 video</p>
+                      </div>
+                    </motion.div>
+
+                    {/* Placeholder 3 */}
+                    <motion.div
+                      className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-green-600/20 to-emerald-600/20 border border-green-500/30 hover:border-green-400/50 transition-all duration-300"
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      <div className="aspect-video bg-gradient-to-br from-green-500/30 to-emerald-500/30 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-green-400 to-emerald-400 rounded-full flex items-center justify-center">
+                            <Target className="w-8 h-8 text-white" />
+                          </div>
+                          <p className="text-green-200 font-medium text-sm">Case Study Image/Video 3</p>
+                          <p className="text-green-300 text-xs mt-1">Click to add your content</p>
+                        </div>
+                      </div>
+                      <div className="p-3 bg-green-900/50">
+                        <p className="text-green-200 text-sm font-medium">Results & Impact</p>
+                        <p className="text-green-300 text-xs">Add your custom photography or MP4 video</p>
+                      </div>
+                    </motion.div>
+
+                    {/* Placeholder 4 */}
+                    <motion.div
+                      className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-orange-600/20 to-red-600/20 border border-orange-500/30 hover:border-orange-400/50 transition-all duration-300"
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.4 }}
+                    >
+                      <div className="aspect-video bg-gradient-to-br from-orange-500/30 to-red-500/30 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-orange-400 to-red-400 rounded-full flex items-center justify-center">
+                            <Users className="w-8 h-8 text-white" />
+                          </div>
+                          <p className="text-orange-200 font-medium text-sm">Case Study Image/Video 4</p>
+                          <p className="text-orange-300 text-xs mt-1">Click to add your content</p>
+                        </div>
+                      </div>
+                      <div className="p-3 bg-orange-900/50">
+                        <p className="text-orange-200 text-sm font-medium">User Testing & Feedback</p>
+                        <p className="text-orange-300 text-xs">Add your custom photography or MP4 video</p>
+                      </div>
+                    </motion.div>
+
+                    {/* Placeholder 5 */}
+                    <motion.div
+                      className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-indigo-600/20 to-purple-600/20 border border-indigo-500/30 hover:border-indigo-400/50 transition-all duration-300"
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5 }}
+                    >
+                      <div className="aspect-video bg-gradient-to-br from-indigo-500/30 to-purple-500/30 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full flex items-center justify-center">
+                            <Zap className="w-8 h-8 text-white" />
+                          </div>
+                          <p className="text-indigo-200 font-medium text-sm">Case Study Image/Video 5</p>
+                          <p className="text-indigo-300 text-xs mt-1">Click to add your content</p>
+                        </div>
+                      </div>
+                      <div className="p-3 bg-indigo-900/50">
+                        <p className="text-indigo-200 text-sm font-medium">Technical Implementation</p>
+                        <p className="text-indigo-300 text-xs">Add your custom photography or MP4 video</p>
+                      </div>
+                    </motion.div>
+                  </div>
+                </div>
+              )}
 
               {/* UX Process & Methodology */}
               <div className="bg-gray-800/30 rounded-xl p-6 border border-gray-700/50">
