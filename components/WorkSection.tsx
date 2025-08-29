@@ -436,132 +436,138 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                     <Eye className="w-6 h-6 mr-3 text-purple-400" />
                     Horizon Control System Visuals
                   </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {/* Arduino Integration Video */}
-                    <motion.div
-                      className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300"
-                      whileHover={{ scale: 1.02, y: -5 }}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.1 }}
-                    >
-                                          <div className="aspect-video bg-gradient-to-br from-purple-500/30 to-pink-500/30 flex items-center justify-center">
-                      <video 
-                        className="w-full h-full object-cover"
-                        autoPlay 
-                        muted 
-                        loop 
-                        playsInline
+                                    <div className="space-y-6">
+                    {/* First Row: 9:16 ratio videos side by side */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                      {/* Arduino Integration Video - 9:16 */}
+                      <motion.div
+                        className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300"
+                        whileHover={{ scale: 1.02, y: -5 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1 }}
                       >
-                        <source src="/assets/videos/HorizonControl/hc_arduino.MOV" type="video/quicktime" />
-                        <source src="/assets/videos/HorizonControl/hc_arduino.MOV" type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
-                    </div>
-                    <div className="p-4 bg-purple-900/50">
-                      <p className="text-purple-200 text-sm font-medium">Arduino Integration</p>
-                      <p className="text-purple-300 text-xs">Real-time Arduino board connection to medical cameras</p>
-                    </div>
-                    </motion.div>
+                        <div className="aspect-[9/16] bg-gradient-to-br from-purple-500/30 to-pink-500/30 flex items-center justify-center">
+                          <video 
+                            className="w-full h-full object-cover"
+                            autoPlay 
+                            muted 
+                            loop 
+                            playsInline
+                          >
+                            <source src="/assets/videos/HorizonControl/hc_arduino.MOV" type="video/quicktime" />
+                            <source src="/assets/videos/HorizonControl/hc_arduino.MOV" type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                        <div className="p-4 bg-purple-900/50">
+                          <p className="text-purple-200 text-sm font-medium">Arduino Integration</p>
+                          <p className="text-purple-300 text-xs">Real-time Arduino board connection to medical cameras</p>
+                        </div>
+                      </motion.div>
 
-                    {/* 3D Model Video */}
-                    <motion.div
-                      className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-600/20 to-cyan-600/20 border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300"
-                      whileHover={{ scale: 1.02, y: -5 }}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.2 }}
-                    >
-                                          <div className="aspect-video bg-gradient-to-br from-blue-500/30 to-cyan-500/30 flex items-center justify-center">
-                      <video 
-                        className="w-full h-full object-cover"
-                        autoPlay 
-                        muted 
-                        loop 
-                        playsInline
+                      {/* Wheel Control Video - 9:16 */}
+                      <motion.div
+                        className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-green-600/20 to-emerald-600/20 border border-green-500/30 hover:border-green-400/50 transition-all duration-300"
+                        whileHover={{ scale: 1.02, y: -5 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
                       >
-                        <source src="/assets/videos/HorizonControl/3dModel.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
-                    </div>
-                    <div className="p-4 bg-blue-900/50">
-                      <p className="text-blue-200 text-sm font-medium">3D Model Visualization</p>
-                      <p className="text-blue-300 text-xs">Interactive 3D model for surgical planning</p>
-                    </div>
-                    </motion.div>
+                        <div className="aspect-[9/16] bg-gradient-to-br from-green-500/30 to-emerald-500/30 flex items-center justify-center">
+                          <video 
+                            className="w-full h-full object-cover"
+                            autoPlay 
+                            muted 
+                            loop 
+                            playsInline
+                          >
+                            <source src="/assets/videos/HorizonControl/hc_wheel.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                        <div className="p-4 bg-green-900/50">
+                          <p className="text-green-200 text-sm font-medium">Control Interface</p>
+                          <p className="text-green-300 text-xs">Ergonomic wheel control for surgical precision</p>
+                        </div>
+                      </motion.div>
 
-                    {/* Wheel Control Video */}
-                    <motion.div
-                      className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-green-600/20 to-emerald-600/20 border border-green-500/30 hover:border-green-400/50 transition-all duration-300"
-                      whileHover={{ scale: 1.02, y: -5 }}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.3 }}
-                    >
-                                          <div className="aspect-video bg-gradient-to-br from-green-500/30 to-emerald-500/30 flex items-center justify-center">
-                      <video 
-                        className="w-full h-full object-cover"
-                        autoPlay 
-                        muted 
-                        loop 
-                        playsInline
+                      {/* Trimmed Demo Video - 9:16 */}
+                      <motion.div
+                        className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-indigo-600/20 to-purple-600/20 border border-indigo-500/30 hover:border-indigo-400/50 transition-all duration-300"
+                        whileHover={{ scale: 1.02, y: -5 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 }}
                       >
-                        <source src="/assets/videos/HorizonControl/hc_wheel.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
+                        <div className="aspect-[9/16] bg-gradient-to-br from-indigo-500/30 to-purple-500/30 flex items-center justify-center">
+                          <video 
+                            className="w-full h-full object-cover"
+                            autoPlay 
+                            muted 
+                            loop 
+                            playsInline
+                          >
+                            <source src="/assets/videos/HorizonControl/hd_trimmed.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                        <div className="p-4 bg-indigo-900/50">
+                          <p className="text-indigo-200 text-sm font-medium">System Demo</p>
+                          <p className="text-indigo-300 text-xs">Complete system demonstration and workflow</p>
+                        </div>
+                      </motion.div>
                     </div>
-                    <div className="p-4 bg-green-900/50">
-                      <p className="text-green-200 text-sm font-medium">Control Interface</p>
-                      <p className="text-green-300 text-xs">Ergonomic wheel control for surgical precision</p>
-                    </div>
-                    </motion.div>
 
-                    {/* Live Case Monitor Image */}
-                    <motion.div
-                      className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-orange-600/20 to-red-600/20 border border-orange-500/30 hover:border-orange-400/50 transition-all duration-300"
-                      whileHover={{ scale: 1.02, y: -5 }}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.4 }}
-                    >
-                                          <div className="aspect-video bg-gradient-to-br from-orange-500/30 to-red-500/30 flex items-center justify-center">
-                      <img 
-                        src="/assets/videos/HorizonControl/Monitor - LIVE CASE - HC_ Unlocked, Recording_ On, Nano.jpg"
-                        alt="Live Case Monitor Interface"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="p-4 bg-orange-900/50">
-                      <p className="text-orange-200 text-sm font-medium">Live Case Monitor</p>
-                      <p className="text-orange-300 text-xs">Real-time surgical interface during procedures</p>
-                    </div>
-                    </motion.div>
-
-                    {/* Trimmed Demo Video */}
-                    <motion.div
-                      className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-indigo-600/20 to-purple-600/20 border border-indigo-500/30 hover:border-indigo-400/50 transition-all duration-300"
-                      whileHover={{ scale: 1.02, y: -5 }}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.5 }}
-                    >
-                                          <div className="aspect-video bg-gradient-to-br from-indigo-500/30 to-purple-500/30 flex items-center justify-center">
-                      <video 
-                        className="w-full h-full object-cover"
-                        autoPlay 
-                        muted 
-                        loop 
-                        playsInline
+                    {/* Second Row: 16:9 ratio videos side by side */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {/* 3D Model Video - 16:9 */}
+                      <motion.div
+                        className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-600/20 to-cyan-600/20 border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300"
+                        whileHover={{ scale: 1.02, y: -5 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 }}
                       >
-                        <source src="/assets/videos/HorizonControl/hd_trimmed.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                  </div>
-                  <div className="p-4 bg-indigo-900/50">
-                    <p className="text-indigo-200 text-sm font-medium">System Demo</p>
-                    <p className="text-indigo-300 text-xs">Complete system demonstration and workflow</p>
-                  </div>
-                    </motion.div>
+                        <div className="aspect-video bg-gradient-to-br from-blue-500/30 to-cyan-500/30 flex items-center justify-center">
+                          <video 
+                            className="w-full h-full object-cover"
+                            autoPlay 
+                            muted 
+                            loop 
+                            playsInline
+                          >
+                            <source src="/assets/videos/HorizonControl/3dModel.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                        <div className="p-4 bg-blue-900/50">
+                          <p className="text-blue-200 text-sm font-medium">3D Model Visualization</p>
+                          <p className="text-blue-300 text-xs">Interactive 3D model for surgical planning</p>
+                        </div>
+                      </motion.div>
+
+                      {/* Live Case Monitor Image - 16:9 */}
+                      <motion.div
+                        className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-orange-600/20 to-red-600/20 border border-orange-500/30 hover:border-orange-400/50 transition-all duration-300"
+                        whileHover={{ scale: 1.02, y: -5 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.5 }}
+                      >
+                        <div className="aspect-video bg-gradient-to-br from-orange-500/30 to-red-500/30 flex items-center justify-center">
+                          <img 
+                            src="/assets/videos/HorizonControl/Monitor - LIVE CASE - HC_ Unlocked, Recording_ On, Nano.jpg"
+                            alt="Live Case Monitor Interface"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="p-4 bg-orange-900/50">
+                          <p className="text-orange-200 text-sm font-medium">Live Case Monitor</p>
+                          <p className="text-orange-300 text-xs">Real-time surgical interface during procedures</p>
+                        </div>
+                      </motion.div>
+                    </div>
                   </div>
                 </div>
               ) : (
