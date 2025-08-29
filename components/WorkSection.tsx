@@ -675,10 +675,7 @@ const CarouselItemComponent = ({ project, index, isActive }: {
 
 
 
-                          <img 
-                            src="/assets/videos/HorizonControl/Monitor - LIVE CASE - HC_ Unlocked, Recording_ On, Nano.jpg"
-                            alt="Live Case Monitor Interface"
-                            className="w-full h-full object-cover"
+
                             onError={(e) => {
                               console.error('Image failed to load:', e);
                               const target = e.target as HTMLImageElement;
