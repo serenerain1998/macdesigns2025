@@ -672,15 +672,9 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                         </div>
                       </motion.div>
 
-                      {/* Live Case Monitor Image - 16:12 ratio (taller) */}
-                      <motion.div
-                        className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-orange-600/20 to-red-600/20 border border-orange-500/30 hover:border-orange-400/50 transition-all duration-300"
-                        whileHover={{ scale: 1.02, y: -5 }}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5 }}
-                      >
-                        <div className="aspect-[16/12] bg-gradient-to-br from-orange-500/30 to-red-500/30 flex items-center justify-center">
+
+
+
                           <img 
                             src="/assets/videos/HorizonControl/Monitor - LIVE CASE - HC_ Unlocked, Recording_ On, Nano.jpg"
                             alt="Live Case Monitor Interface"
@@ -706,11 +700,7 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                             }}
                           />
                         </div>
-                        <div className="p-4 bg-orange-900/50">
-                          <p className="text-orange-200 text-sm font-medium">Live Case Monitor</p>
-                          <p className="text-orange-300 text-xs">Real-time surgical interface during procedures</p>
-                        </div>
-                      </motion.div>
+
                     </div>
                   </div>
                 </div>
