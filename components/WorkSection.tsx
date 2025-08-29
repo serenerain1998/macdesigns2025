@@ -454,6 +454,25 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                             muted 
                             loop 
                             playsInline
+                            onError={(e) => {
+                              console.error('Video failed to load:', e);
+                              const target = e.target as HTMLVideoElement;
+                              target.style.display = 'none';
+                              const parent = target.parentElement;
+                              if (parent) {
+                                parent.innerHTML = `
+                                  <div class="text-center text-purple-200">
+                                    <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center">
+                                      <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                      </svg>
+                                    </div>
+                                    <p class="text-purple-200 font-medium text-sm">Video Loading Error</p>
+                                    <p class="text-purple-300 text-xs mt-1">Check file path: hc_arduino.MOV</p>
+                                  </div>
+                                `;
+                              }
+                            }}
                           >
                             <source src="/assets/videos/HorizonControl/hc_arduino.MOV" type="video/quicktime" />
                             <source src="/assets/videos/HorizonControl/hc_arduino.MOV" type="video/mp4" />
@@ -481,9 +500,28 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                             muted 
                             loop 
                             playsInline
+                            onError={(e) => {
+                              console.error('Video failed to load:', e);
+                              const target = e.target as HTMLVideoElement;
+                              target.style.display = 'none';
+                              const parent = target.parentElement;
+                              if (parent) {
+                                parent.innerHTML = `
+                                  <div class="text-center text-teal-200">
+                                    <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-teal-400 to-blue-400 rounded-full flex items-center justify-center">
+                                      <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                      </svg>
+                                    </div>
+                                    <p class="text-teal-200 font-medium text-sm">Video Loading Error</p>
+                                    <p class="text-teal-300 text-xs mt-1">Check file path: arduino.mov</p>
+                                  </div>
+                                `;
+                              }
+                            }}
                           >
-                            <source src="/assets/videos/HorizonControl/arduino.MOV" type="video/quicktime" />
-                            <source src="/assets/videos/HorizonControl/arduino.MOV" type="video/mp4" />
+                            <source src="/assets/videos/HorizonControl/arduino.mov" type="video/quicktime" />
+                            <source src="/assets/videos/HorizonControl/arduino.mov" type="video/mp4" />
                             Your browser does not support the video tag.
                           </video>
                         </div>
@@ -511,6 +549,25 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                             muted 
                             loop 
                             playsInline
+                            onError={(e) => {
+                              console.error('Video failed to load:', e);
+                              const target = e.target as HTMLVideoElement;
+                              target.style.display = 'none';
+                              const parent = target.parentElement;
+                              if (parent) {
+                                parent.innerHTML = `
+                                  <div class="text-center text-green-200">
+                                    <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-green-400 to-emerald-400 rounded-full flex items-center justify-center">
+                                      <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                      </svg>
+                                    </div>
+                                    <p class="text-green-200 font-medium text-sm">Video Loading Error</p>
+                                    <p class="text-green-300 text-xs mt-1">Check file path: hc_wheel.mp4</p>
+                                  </div>
+                                `;
+                              }
+                            }}
                           >
                             <source src="/assets/videos/HorizonControl/hc_wheel.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
@@ -537,6 +594,25 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                             muted 
                             loop 
                             playsInline
+                            onError={(e) => {
+                              console.error('Video failed to load:', e);
+                              const target = e.target as HTMLVideoElement;
+                              target.style.display = 'none';
+                              const parent = target.parentElement;
+                              if (parent) {
+                                parent.innerHTML = `
+                                  <div class="text-center text-indigo-200">
+                                    <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full flex items-center justify-center">
+                                      <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                      </svg>
+                                    </div>
+                                    <p class="text-indigo-200 font-medium text-sm">Video Loading Error</p>
+                                    <p class="text-indigo-300 text-xs mt-1">Check file path: hd_trimmed.mp4</p>
+                                  </div>
+                                `;
+                              }
+                            }}
                           >
                             <source src="/assets/videos/HorizonControl/hd_trimmed.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
@@ -566,6 +642,25 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                             muted 
                             loop 
                             playsInline
+                            onError={(e) => {
+                              console.error('Video failed to load:', e);
+                              const target = e.target as HTMLVideoElement;
+                              target.style.display = 'none';
+                              const parent = target.parentElement;
+                              if (parent) {
+                                parent.innerHTML = `
+                                  <div class="text-center text-blue-200">
+                                    <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full flex items-center justify-center">
+                                      <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                      </svg>
+                                    </div>
+                                    <p class="text-blue-200 font-medium text-sm">Video Loading Error</p>
+                                    <p class="text-blue-300 text-xs mt-1">Check file path: 3dModel.mp4</p>
+                                  </div>
+                                `;
+                              }
+                            }}
                           >
                             <source src="/assets/videos/HorizonControl/3dModel.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
@@ -590,6 +685,25 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                             src="/assets/videos/HorizonControl/Monitor - LIVE CASE - HC_ Unlocked, Recording_ On, Nano.jpg"
                             alt="Live Case Monitor Interface"
                             className="w-full h-full object-cover"
+                            onError={(e) => {
+                              console.error('Image failed to load:', e);
+                              const target = e.target as HTMLImageElement;
+                              target.style.display = 'none';
+                              const parent = target.parentElement;
+                              if (parent) {
+                                parent.innerHTML = `
+                                  <div class="text-center text-orange-200">
+                                    <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-orange-400 to-red-400 rounded-full flex items-center justify-center">
+                                      <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                      </svg>
+                                    </div>
+                                    <p class="text-orange-200 font-medium text-sm">Image Loading Error</p>
+                                    <p class="text-orange-300 text-xs mt-1">Check file path: Monitor - LIVE CASE - HC_ Unlocked, Recording_ On, Nano.jpg</p>
+                                  </div>
+                                `;
+                              }
+                            }}
                           />
                         </div>
                         <div className="p-4 bg-orange-900/50">

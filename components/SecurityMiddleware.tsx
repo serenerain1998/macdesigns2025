@@ -15,24 +15,20 @@ export function SecurityMiddleware({ children }: SecurityMiddlewareProps) {
       return false;
     };
 
-    // Block keyboard shortcuts for developer tools
+    // Block keyboard shortcuts for developer tools (disabled for development)
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Block F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-      if (
-        e.key === 'F12' ||
-        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
-        (e.ctrlKey && e.key === 'u')
-      ) {
+      // Only block Ctrl+U (view source) - allow developer tools
+      if (e.ctrlKey && e.key === 'u') {
         e.preventDefault();
-        console.warn('🔒 SECURITY: Developer tools shortcut blocked');
+        console.warn('🔒 SECURITY: View source blocked');
         return false;
       }
     };
 
-    // Block text selection
+    // Allow text selection for development
     const handleSelectStart = (e: Event) => {
-      e.preventDefault();
-      return false;
+      // Allow text selection for development purposes
+      return true;
     };
 
     // Block drag and drop
@@ -95,8 +91,9 @@ export function SecurityMiddleware({ children }: SecurityMiddlewareProps) {
       window.top.location.href = window.self.location.href;
     }
 
-    // Disable console logging in production (optional)
-    if (process.env.NODE_ENV === 'production') {
+    // Keep console logging enabled for development
+    // Only disable in production if needed
+    if (process.env.NODE_ENV === 'production' && false) { // Disabled for now
       // Override console methods to prevent information leakage
       const originalConsole = { ...console };
       console.log = () => {};
@@ -123,11 +120,11 @@ export function SecurityMiddleware({ children }: SecurityMiddlewareProps) {
 
   // Additional security measures
   useEffect(() => {
-    // Disable text selection globally
-    document.body.style.userSelect = 'none';
-    document.body.style.webkitUserSelect = 'none';
-    document.body.style.mozUserSelect = 'none';
-    document.body.style.msUserSelect = 'none';
+    // Allow text selection for development
+    // document.body.style.userSelect = 'none';
+    // document.body.style.webkitUserSelect = 'none';
+    // document.body.style.mozUserSelect = 'none';
+    // document.body.style.msUserSelect = 'none';
 
     // Disable image dragging
     const images = document.querySelectorAll('img');
@@ -159,13 +156,13 @@ export function SecurityMiddleware({ children }: SecurityMiddlewareProps) {
       ref={securityRef}
       className="security-protected"
       style={{
-        // Additional CSS security measures
-        WebkitTouchCallout: 'none',
-        WebkitUserSelect: 'none',
-        KhtmlUserSelect: 'none',
-        MozUserSelect: 'none',
-        msUserSelect: 'none',
-        userSelect: 'none',
+        // Allow text selection for development
+        // WebkitTouchCallout: 'none',
+        // WebkitUserSelect: 'none',
+        // KhtmlUserSelect: 'none',
+        // MozUserSelect: 'none',
+        // msUserSelect: 'none',
+        // userSelect: 'none',
         // Prevent text selection
         WebkitTapHighlightColor: 'transparent',
         // Disable image dragging
