@@ -437,9 +437,9 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                     Horizon Control System Visuals
                   </h3>
                                     <div className="space-y-6">
-                    {/* First Row: 9:16 ratio videos (2 videos) */}
+                    {/* First Row: 4:5 ratio videos (2 videos) - Shorter and more balanced */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      {/* Arduino Integration Video - 9:16 */}
+                      {/* Arduino Integration Video - 4:5 ratio */}
                       <motion.div
                         className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300"
                         whileHover={{ scale: 1.02, y: -5 }}
@@ -447,7 +447,7 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
                       >
-                        <div className="aspect-[9/16] bg-gradient-to-br from-purple-500/30 to-pink-500/30 flex items-center justify-center">
+                        <div className="aspect-[4/5] bg-gradient-to-br from-purple-500/30 to-pink-500/30 flex items-center justify-center">
                           <video 
                             className="w-full h-full object-cover"
                             autoPlay 
@@ -466,7 +466,7 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                         </div>
                       </motion.div>
 
-                      {/* New Arduino Video - 9:16 */}
+                      {/* New Arduino Video - 4:5 ratio */}
                       <motion.div
                         className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-teal-600/20 to-blue-600/20 border border-teal-500/30 hover:border-teal-400/50 transition-all duration-300"
                         whileHover={{ scale: 1.02, y: -5 }}
@@ -474,7 +474,7 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
                       >
-                        <div className="aspect-[9/16] bg-gradient-to-br from-teal-500/30 to-blue-500/30 flex items-center justify-center">
+                        <div className="aspect-[4/5] bg-gradient-to-br from-teal-500/30 to-blue-500/30 flex items-center justify-center">
                           <video 
                             className="w-full h-full object-cover"
                             autoPlay 
@@ -494,9 +494,9 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                       </motion.div>
                     </div>
 
-                    {/* Second Row: 9:16 ratio videos (2 videos) */}
+                    {/* Second Row: 4:5 ratio videos (2 videos) - Shorter and more balanced */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      {/* Wheel Control Video - 9:16 */}
+                      {/* Wheel Control Video - 4:5 ratio */}
                       <motion.div
                         className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-green-600/20 to-emerald-600/20 border border-green-500/30 hover:border-green-400/50 transition-all duration-300"
                         whileHover={{ scale: 1.02, y: -5 }}
@@ -504,7 +504,7 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
                       >
-                        <div className="aspect-[9/16] bg-gradient-to-br from-green-500/30 to-emerald-500/30 flex items-center justify-center">
+                        <div className="aspect-[4/5] bg-gradient-to-br from-green-500/30 to-emerald-500/30 flex items-center justify-center">
                           <video 
                             className="w-full h-full object-cover"
                             autoPlay 
@@ -522,7 +522,7 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                         </div>
                       </motion.div>
 
-                      {/* Trimmed Demo Video - 9:16 */}
+                      {/* Trimmed Demo Video - 4:5 ratio */}
                       <motion.div
                         className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-indigo-600/20 to-purple-600/20 border border-indigo-500/30 hover:border-indigo-400/50 transition-all duration-300"
                         whileHover={{ scale: 1.02, y: -5 }}
@@ -530,7 +530,7 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 }}
                       >
-                        <div className="aspect-[9/16] bg-gradient-to-br from-indigo-500/30 to-purple-500/30 flex items-center justify-center">
+                        <div className="aspect-[4/5] bg-gradient-to-br from-indigo-500/30 to-purple-500/30 flex items-center justify-center">
                           <video 
                             className="w-full h-full object-cover"
                             autoPlay 
@@ -549,9 +549,9 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                       </motion.div>
                     </div>
 
-                    {/* Second Row: 16:9 ratio videos side by side */}
+                    {/* Third Row: 16:12 ratio videos side by side - Taller for better content fit */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      {/* 3D Model Video - 16:9 */}
+                      {/* 3D Model Video - 16:12 ratio (taller) */}
                       <motion.div
                         className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-600/20 to-cyan-600/20 border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300"
                         whileHover={{ scale: 1.02, y: -5 }}
@@ -559,7 +559,7 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 }}
                       >
-                        <div className="aspect-video bg-gradient-to-br from-blue-500/30 to-cyan-500/30 flex items-center justify-center">
+                        <div className="aspect-[16/12] bg-gradient-to-br from-blue-500/30 to-cyan-500/30 flex items-center justify-center">
                           <video 
                             className="w-full h-full object-cover"
                             autoPlay 
@@ -577,7 +577,7 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                         </div>
                       </motion.div>
 
-                      {/* Live Case Monitor Image - 16:9 */}
+                      {/* Live Case Monitor Image - 16:12 ratio (taller) */}
                       <motion.div
                         className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-orange-600/20 to-red-600/20 border border-orange-500/30 hover:border-orange-400/50 transition-all duration-300"
                         whileHover={{ scale: 1.02, y: -5 }}
@@ -585,7 +585,7 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5 }}
                       >
-                        <div className="aspect-video bg-gradient-to-br from-orange-500/30 to-red-500/30 flex items-center justify-center">
+                        <div className="aspect-[16/12] bg-gradient-to-br from-orange-500/30 to-red-500/30 flex items-center justify-center">
                           <img 
                             src="/assets/videos/HorizonControl/Monitor - LIVE CASE - HC_ Unlocked, Recording_ On, Nano.jpg"
                             alt="Live Case Monitor Interface"
