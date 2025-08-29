@@ -1,0 +1,15 @@
+# Background Images
+
+Place your background images and textures in this folder.
+
+## Current Images:
+- surgical-room.png - High-quality surgical room scene with medical team
+
+## Recommended naming:
+- hero-background.jpg (1920x1080px)
+- section-texture.jpg (1200x800px)
+- pattern-overlay.png (with transparency)
+- surgical-room.png (current)
+
+Format: JPEG for photos, PNG for patterns with transparency
+Size: Optimized for web (under 500KB each)

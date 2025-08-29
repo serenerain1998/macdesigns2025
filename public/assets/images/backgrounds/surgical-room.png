@@ -1,0 +1,2 @@
+import exampleImage from 'figma:asset/fa3a37fef07eda341557b10656c9acf33fa0dbf7.png';
+export default exampleImage;

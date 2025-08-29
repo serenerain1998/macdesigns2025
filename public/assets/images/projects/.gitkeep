@@ -1,0 +1,21 @@
+# Project Images
+
+Place your project thumbnail images in this folder.
+
+## Current Status:
+⚠️ Using external Unsplash URLs as fallbacks for broken local references
+- Security Platform: Using Unsplash fallback (works)
+- Surgical Interface: Using surgical-room.png from backgrounds (works)  
+- AI Pathology: Using Unsplash fallback (works)
+
+## Recommended local images needed:
+- security-platform.jpg (Security screening dashboard/interface)
+- ai-pathology.jpg (AI pathology analysis interface)
+
+## Recommended naming:
+- security-platform.jpg (400x300px)
+- surgical-interface.jpg (400x300px)  
+- ai-pathology.jpg (400x300px)
+
+Format: JPEG or WebP
+Size: Optimized for web (under 200KB each)

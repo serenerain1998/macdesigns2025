@@ -1,0 +1,11 @@
+# Favicon and static assets
+/favicon.ico  /favicon.ico  200
+/favicon-*.png  /favicon-*.png  200
+/apple-touch-icon.png  /apple-touch-icon.png  200
+/android-chrome-*.png  /android-chrome-*.png  200
+/icons/*  /icons/*  200
+/social/*  /social/*  200
+/site.webmanifest  /site.webmanifest  200
+
+# SPA fallback - redirect all other routes to index.html
+/*  /index.html  200

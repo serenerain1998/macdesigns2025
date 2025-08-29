@@ -1,0 +1,7 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#1f2937"/>
+  <rect x="100" y="100" width="1000" height="430" fill="#3b82f6" rx="20"/>
+  <text x="600" y="250" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle">Melissa Casole</text>
+  <text x="600" y="350" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle">UX Design Lead</text>
+  <text x="600" y="450" font-family="Arial, sans-serif" font-size="32" fill="white" text-anchor="middle">Portfolio & Case Studies</text>
+</svg>

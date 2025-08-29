@@ -1,0 +1,11 @@
+# Custom Icons and Logos
+
+Place your custom icons, logos, and SVG graphics in this folder.
+
+Recommended naming:
+- mac-designs-logo.svg
+- custom-icon-name.svg
+- brand-symbol.png
+
+Format: SVG preferred for scalability, PNG for complex graphics
+Size: Keep SVGs under 50KB, PNGs under 100KB
