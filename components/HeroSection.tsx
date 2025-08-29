@@ -418,14 +418,11 @@ export function HeroSection() {
               className="relative group border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-cyan-500 dark:hover:border-cyan-400 px-8 py-4 rounded-full text-lg font-semibold overflow-hidden bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm"
             >
               <span className="relative z-10 flex items-center">
-                <svg 
-                  className="w-5 h-5 mr-2" 
-                  viewBox="0 0 24 24" 
-                  fill="currentColor"
-                >
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M8 12l2 2 4-4"/>
-                </svg>
+                <img 
+                  src="/social/dribbble.svg" 
+                  alt="Dribbble" 
+                  className="w-5 h-5 mr-2"
+                />
                 View my Dribbble
               </span>
               
