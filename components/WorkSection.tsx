@@ -445,23 +445,23 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.1 }}
                     >
-                      <div className="aspect-video bg-gradient-to-br from-purple-500/30 to-pink-500/30 flex items-center justify-center">
-                        <video 
-                          className="w-full h-full object-cover"
-                          autoPlay 
-                          muted 
-                          loop 
-                          playsInline
-                        >
-                          <source src="/assets/videos/HorizonControl/hc_arduino.MOV" type="video/quicktime" />
-                          <source src="/assets/videos/HorizonControl/hc_arduino.MOV" type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
-                      </div>
-                      <div className="p-3 bg-purple-900/50">
-                        <p className="text-purple-200 text-sm font-medium">Arduino Integration</p>
-                        <p className="text-purple-300 text-xs">Real-time Arduino board connection to medical cameras</p>
-                      </div>
+                                          <div className="aspect-video bg-gradient-to-br from-purple-500/30 to-pink-500/30 flex items-center justify-center">
+                      <video 
+                        className="w-full h-full object-cover"
+                        autoPlay 
+                        muted 
+                        loop 
+                        playsInline
+                      >
+                        <source src="/assets/videos/HorizonControl/hc_arduino.MOV" type="video/quicktime" />
+                        <source src="/assets/videos/HorizonControl/hc_arduino.MOV" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    <div className="p-4 bg-purple-900/50">
+                      <p className="text-purple-200 text-sm font-medium">Arduino Integration</p>
+                      <p className="text-purple-300 text-xs">Real-time Arduino board connection to medical cameras</p>
+                    </div>
                     </motion.div>
 
                     {/* 3D Model Video */}
@@ -472,22 +472,22 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2 }}
                     >
-                      <div className="aspect-video bg-gradient-to-br from-blue-500/30 to-cyan-500/30 flex items-center justify-center">
-                        <video 
-                          className="w-full h-full object-cover"
-                          autoPlay 
-                          muted 
-                          loop 
-                          playsInline
-                        >
-                          <source src="/assets/videos/HorizonControl/3dModel.mp4" type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
-                      </div>
-                      <div className="p-3 bg-blue-900/50">
-                        <p className="text-blue-200 text-sm font-medium">3D Model Visualization</p>
-                        <p className="text-blue-300 text-xs">Interactive 3D model for surgical planning</p>
-                      </div>
+                                          <div className="aspect-video bg-gradient-to-br from-blue-500/30 to-cyan-500/30 flex items-center justify-center">
+                      <video 
+                        className="w-full h-full object-cover"
+                        autoPlay 
+                        muted 
+                        loop 
+                        playsInline
+                      >
+                        <source src="/assets/videos/HorizonControl/3dModel.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    <div className="p-4 bg-blue-900/50">
+                      <p className="text-blue-200 text-sm font-medium">3D Model Visualization</p>
+                      <p className="text-blue-300 text-xs">Interactive 3D model for surgical planning</p>
+                    </div>
                     </motion.div>
 
                     {/* Wheel Control Video */}
@@ -498,22 +498,22 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3 }}
                     >
-                      <div className="aspect-video bg-gradient-to-br from-green-500/30 to-emerald-500/30 flex items-center justify-center">
-                        <video 
-                          className="w-full h-full object-cover"
-                          autoPlay 
-                          muted 
-                          loop 
-                          playsInline
-                        >
-                          <source src="/assets/videos/HorizonControl/hc_wheel.mp4" type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
-                      </div>
-                      <div className="p-3 bg-green-900/50">
-                        <p className="text-green-200 text-sm font-medium">Control Interface</p>
-                        <p className="text-green-300 text-xs">Ergonomic wheel control for surgical precision</p>
-                      </div>
+                                          <div className="aspect-video bg-gradient-to-br from-green-500/30 to-emerald-500/30 flex items-center justify-center">
+                      <video 
+                        className="w-full h-full object-cover"
+                        autoPlay 
+                        muted 
+                        loop 
+                        playsInline
+                      >
+                        <source src="/assets/videos/HorizonControl/hc_wheel.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    <div className="p-4 bg-green-900/50">
+                      <p className="text-green-200 text-sm font-medium">Control Interface</p>
+                      <p className="text-green-300 text-xs">Ergonomic wheel control for surgical precision</p>
+                    </div>
                     </motion.div>
 
                     {/* Live Case Monitor Image */}
@@ -524,17 +524,17 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.4 }}
                     >
-                      <div className="aspect-video bg-gradient-to-br from-orange-500/30 to-red-500/30 flex items-center justify-center">
-                        <img 
-                          src="/assets/videos/HorizonControl/Monitor - LIVE CASE - HC_ Unlocked, Recording_ On, Nano.jpg"
-                          alt="Live Case Monitor Interface"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="p-3 bg-orange-900/50">
-                        <p className="text-orange-200 text-sm font-medium">Live Case Monitor</p>
-                        <p className="text-orange-300 text-xs">Real-time surgical interface during procedures</p>
-                      </div>
+                                          <div className="aspect-video bg-gradient-to-br from-orange-500/30 to-red-500/30 flex items-center justify-center">
+                      <img 
+                        src="/assets/videos/HorizonControl/Monitor - LIVE CASE - HC_ Unlocked, Recording_ On, Nano.jpg"
+                        alt="Live Case Monitor Interface"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="p-4 bg-orange-900/50">
+                      <p className="text-orange-200 text-sm font-medium">Live Case Monitor</p>
+                      <p className="text-orange-300 text-xs">Real-time surgical interface during procedures</p>
+                    </div>
                     </motion.div>
 
                     {/* Trimmed Demo Video */}
@@ -545,22 +545,22 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.5 }}
                     >
-                      <div className="aspect-video bg-gradient-to-br from-indigo-500/30 to-purple-500/30 flex items-center justify-center">
-                        <video 
-                          className="w-full h-full object-cover"
-                          autoPlay 
-                          muted 
-                          loop 
-                          playsInline
-                        >
-                          <source src="/assets/videos/HorizonControl/hd_trimmed.mp4" type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
-                      </div>
-                      <div className="p-3 bg-indigo-900/50">
-                        <p className="text-indigo-200 text-sm font-medium">System Demo</p>
-                        <p className="text-indigo-300 text-xs">Complete system demonstration and workflow</p>
-                      </div>
+                                          <div className="aspect-video bg-gradient-to-br from-indigo-500/30 to-purple-500/30 flex items-center justify-center">
+                      <video 
+                        className="w-full h-full object-cover"
+                        autoPlay 
+                        muted 
+                        loop 
+                        playsInline
+                      >
+                        <source src="/assets/videos/HorizonControl/hd_trimmed.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div className="p-4 bg-indigo-900/50">
+                    <p className="text-indigo-200 text-sm font-medium">System Demo</p>
+                    <p className="text-indigo-300 text-xs">Complete system demonstration and workflow</p>
+                  </div>
                     </motion.div>
                   </div>
                 </div>
@@ -588,7 +588,7 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                           <p className="text-purple-300 text-xs mt-1">Click to add your content</p>
                         </div>
                       </div>
-                      <div className="p-3 bg-purple-900/50">
+                      <div className="p-4 bg-purple-900/50">
                         <p className="text-purple-200 text-sm font-medium">Project Overview</p>
                         <p className="text-purple-300 text-xs">Add your custom photography or MP4 video</p>
                       </div>
@@ -611,7 +611,7 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                           <p className="text-blue-300 text-xs mt-1">Click to add your content</p>
                         </div>
                       </div>
-                      <div className="p-3 bg-blue-900/50">
+                      <div className="p-4 bg-blue-900/50">
                         <p className="text-blue-200 text-sm font-medium">Process & Methodology</p>
                         <p className="text-blue-300 text-xs">Add your custom photography or MP4 video</p>
                       </div>
@@ -634,7 +634,7 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                           <p className="text-green-300 text-xs mt-1">Click to add your content</p>
                         </div>
                       </div>
-                      <div className="p-3 bg-green-900/50">
+                      <div className="p-4 bg-green-900/50">
                         <p className="text-green-200 text-sm font-medium">Results & Impact</p>
                         <p className="text-green-300 text-xs">Add your custom photography or MP4 video</p>
                       </div>
@@ -657,7 +657,7 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                           <p className="text-orange-300 text-xs mt-1">Click to add your content</p>
                         </div>
                       </div>
-                      <div className="p-3 bg-orange-900/50">
+                      <div className="p-4 bg-orange-900/50">
                         <p className="text-orange-200 text-sm font-medium">User Testing & Feedback</p>
                         <p className="text-orange-300 text-xs">Add your custom photography or MP4 video</p>
                       </div>
@@ -680,7 +680,7 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                           <p className="text-indigo-300 text-xs mt-1">Click to add your content</p>
                         </div>
                       </div>
-                      <div className="p-3 bg-indigo-900/50">
+                      <div className="p-4 bg-indigo-900/50">
                         <p className="text-indigo-200 text-sm font-medium">Technical Implementation</p>
                         <p className="text-indigo-300 text-xs">Add your custom photography or MP4 video</p>
                       </div>
