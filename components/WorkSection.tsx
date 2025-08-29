@@ -437,8 +437,8 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                     Horizon Control System Visuals
                   </h3>
                                     <div className="space-y-6">
-                    {/* First Row: 9:16 ratio videos side by side */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {/* First Row: 9:16 ratio videos (2 videos) */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       {/* Arduino Integration Video - 9:16 */}
                       <motion.div
                         className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300"
@@ -466,13 +466,43 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                         </div>
                       </motion.div>
 
+                      {/* New Arduino Video - 9:16 */}
+                      <motion.div
+                        className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-teal-600/20 to-blue-600/20 border border-teal-500/30 hover:border-teal-400/50 transition-all duration-300"
+                        whileHover={{ scale: 1.02, y: -5 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                      >
+                        <div className="aspect-[9/16] bg-gradient-to-br from-teal-500/30 to-blue-500/30 flex items-center justify-center">
+                          <video 
+                            className="w-full h-full object-cover"
+                            autoPlay 
+                            muted 
+                            loop 
+                            playsInline
+                          >
+                            <source src="/assets/videos/HorizonControl/arduino.MOV" type="video/quicktime" />
+                            <source src="/assets/videos/HorizonControl/arduino.MOV" type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                        <div className="p-4 bg-teal-900/50">
+                          <p className="text-teal-200 text-sm font-medium">Arduino Setup</p>
+                          <p className="text-teal-300 text-xs">Arduino board configuration and testing</p>
+                        </div>
+                      </motion.div>
+                    </div>
+
+                    {/* Second Row: 9:16 ratio videos (2 videos) */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       {/* Wheel Control Video - 9:16 */}
                       <motion.div
                         className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-green-600/20 to-emerald-600/20 border border-green-500/30 hover:border-green-400/50 transition-all duration-300"
                         whileHover={{ scale: 1.02, y: -5 }}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
+                        transition={{ delay: 0.3 }}
                       >
                         <div className="aspect-[9/16] bg-gradient-to-br from-green-500/30 to-emerald-500/30 flex items-center justify-center">
                           <video 
@@ -498,7 +528,7 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                         whileHover={{ scale: 1.02, y: -5 }}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 }}
+                        transition={{ delay: 0.4 }}
                       >
                         <div className="aspect-[9/16] bg-gradient-to-br from-indigo-500/30 to-purple-500/30 flex items-center justify-center">
                           <video 
