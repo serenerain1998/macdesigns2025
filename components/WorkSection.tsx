@@ -38,7 +38,7 @@ const carouselProjects = [
     category: 'Design System',
     year: 2023,
     status: 'completed' as const,
-    thumbnailUrl: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&h=600&fit=crop&q=80',
+    thumbnailUrl: 'https://media.graphassets.com/PXjGQYOBSrq6LZIl8oom',
     demoUrl: '',
     highlights: [
       'Reduced design-to-development time by 40%',
@@ -125,7 +125,7 @@ const carouselProjects = [
     category: 'Healthcare AI',
     year: 2023,
     status: 'completed' as const,
-    thumbnailUrl: 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&h=600&fit=crop&q=80',
+    thumbnailUrl: 'https://media.istockphoto.com/id/1934720224/video/black-female-scientist-analyzing-samples-using-a-microscope-at-the-hospitals-lab.jpg?s=640x640&k=20&c=e_UiXodNqh2dnodbIEc1zjo0y6Btg8A3d0VDTqTZkrU=',
     demoUrl: '',
     highlights: [
       'Created front-end coded interactive prototype from design specs',
