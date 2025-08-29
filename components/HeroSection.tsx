@@ -419,7 +419,7 @@ export function HeroSection() {
             >
               <span className="relative z-10 flex items-center">
                 <img 
-                  src="/social/dribbble.svg" 
+                  src="/social/dribbble.svg?v=2" 
                   alt="Dribbble" 
                   className="w-5 h-5 mr-2"
                 />
