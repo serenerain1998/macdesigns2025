@@ -14,29 +14,63 @@ export function Footer() {
       // Show button when user has scrolled more than 50% of the page
       const shouldShow = scrollY > (documentHeight - windowHeight) * 0.5;
       setShowScrollTop(shouldShow);
+      
+      // Debug scroll position
+      if (scrollY > 100) {
+        console.log('Scroll position:', scrollY, 'Should show button:', shouldShow);
+      }
     };
 
+    // Initial check
+    handleScroll();
+    
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   const scrollToTop = () => {
-    // Enhanced smooth scroll to top with fallback
-    if ('scrollBehavior' in document.documentElement.style) {
-      // Modern browsers support smooth scrolling
-      window.scrollTo({ 
-        top: 0, 
-        behavior: 'smooth' 
-      });
-    } else {
-      // Fallback for older browsers
-      const scrollStep = -window.scrollY / (500 / 15);
-      const scrollInterval = setInterval(() => {
-        if (window.scrollY !== 0) {
-          window.scrollBy(0, scrollStep);
-        } else {
-          clearInterval(scrollInterval);
+    try {
+      console.log('Scroll to top clicked, current scroll position:', window.scrollY);
+      
+      // Try multiple scroll methods for maximum compatibility
+      
+      // Method 1: Smooth scroll to top
+      if ('scrollBehavior' in document.documentElement.style) {
+        window.scrollTo({ 
+          top: 0, 
+          behavior: 'smooth' 
+        });
+        console.log('Method 1: Smooth scroll');
+      }
+      
+      // Method 2: Scroll to top of document
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0; // For Safari
+      console.log('Method 2: Direct scrollTop');
+      
+      // Method 3: Window scroll
+      window.scrollTo(0, 0);
+      console.log('Method 3: Window scroll');
+      
+      // Method 4: Scroll into view for body
+      document.body.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      console.log('Method 4: Scroll into view');
+      
+      // Method 5: Fallback with timeout
+      setTimeout(() => {
+        if (window.scrollY > 0) {
+          console.log('Fallback scroll triggered');
+          window.scrollTo(0, 0);
+          document.documentElement.scrollTop = 0;
+          document.body.scrollTop = 0;
         }
-      }, 15);
+      }, 200);
+      
+    } catch (error) {
+      console.error('Scroll error:', error);
+      // Final fallback to instant scroll
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
     }
   };
 
