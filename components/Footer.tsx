@@ -28,6 +28,8 @@ export function Footer() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   const scrollToTop = () => {
+    console.log('🚀 scrollToTop function called!');
+    
     try {
       // Debug page dimensions and scroll state
       const scrollY = window.scrollY;
@@ -150,7 +152,10 @@ export function Footer() {
           </div>
           
           <Button 
-            onClick={scrollToTop}
+            onClick={() => {
+              console.log('🎯 Back to Top button clicked!');
+              scrollToTop();
+            }}
             variant="ghost"
             className="text-gray-400 hover:text-white hover:bg-gray-800 mt-4 md:mt-0 transition-all duration-300 hover:scale-105 group"
             title="Scroll to top of page"
@@ -166,7 +171,10 @@ export function Footer() {
       {/* Floating Back to Top Button */}
       {showScrollTop && (
         <Button
-          onClick={scrollToTop}
+          onClick={() => {
+            console.log('🎯 Floating Back to Top button clicked!');
+            scrollToTop();
+          }}
           variant="ghost"
           size="icon"
           className="fixed bottom-8 right-8 z-50 bg-gray-800/90 dark:bg-gray-900/90 hover:bg-gray-700 dark:hover:bg-gray-800 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-in fade-in slide-in-from-bottom-2"
