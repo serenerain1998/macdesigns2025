@@ -30,7 +30,7 @@ import {
 const carouselProjects = [
   {
     id: 'security-screening-platform',
-    title: 'Security Screening Platform',
+    title: 'Creating ELEMENTS',
     subtitle: 'Comprehensive Design System',
     description: 'Coded v.1 of comprehensive design system for background screening platform. Built library in 4 different front-end tech stacks for maximum flexibility.',
     fullDescription: 'Led the development of a comprehensive design system that unified the user experience across 15+ products in the background screening industry. The system was built to support multiple front-end technologies including React, Vue, Angular, and Web Components, ensuring maximum flexibility for different development teams.',
@@ -74,87 +74,89 @@ const carouselProjects = [
   {
     id: 'surgical-technology-interface',
     title: 'Surgical Technology Interface',
-    subtitle: 'Medical Device UX Design',
-    description: 'Designed UI for multiple OR embedded software consoles using ProtoPie to simulate multi-device interactivity with custom design system libraries.',
-    fullDescription: 'Redesigned the user interface for surgical technology consoles used in operating rooms worldwide. The project focused on reducing cognitive load during critical procedures while maintaining safety and efficiency. Used ProtoPie for advanced prototyping to simulate multi-device interactions and complex surgical workflows.',
-    technologies: ['Figma', 'ProtoPie', 'ProtoPie Studio', 'QT', 'Design Systems'],
+    subtitle: 'Arthroscopy Embedded Medical Software',
+    description: 'Pioneered realistic prototyping for embedded medical software in arthroscopy by connecting Arduino boards to real medical cameras for surgeon usability testing.',
+    fullDescription: 'Led the first-ever integration of Arduino boards with real medical cameras to create realistic prototypes for embedded arthroscopy software. This breakthrough approach enabled authentic usability testing with surgeons to understand ergonomics, motion handling, and interface transitions in real surgical environments.',
+    technologies: ['Figma', 'ProtoPie', 'ProtoPie Studio', 'Arduino', 'Python', 'QT'],
     category: 'Medical Technology',
     year: 2022,
     status: 'completed' as const,
-    thumbnailUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop&q=80',
+    thumbnailUrl: 'https://t4.ftcdn.net/jpg/03/99/12/51/360_F_399125183_HUy4uv9tzzMq5Kauk1wCl0WVyhVqomLv.jpg',
     demoUrl: '',
     highlights: [
-      'Increased surgical workflow efficiency by 60%',
-      'Reduced training time for OR staff by 50%',
-      'Zero safety incidents reported post-implementation',
-      'Deployed across 200+ hospitals worldwide'
+      'First-ever Arduino-medical camera integration for realistic prototyping',
+      'Conducted usability tests with real surgeons in operating rooms',
+      'Improved interface ergonomics through motion analysis',
+      'Enhanced surgical workflow efficiency through iterative testing'
     ],
     metrics: {
-      performanceImprovement: '60%',
-      userIncrease: '35%',
-      conversionRate: '22%',
-      safetyScore: '100%'
+      prototypeRealism: '100%',
+      surgeonFeedback: '15+',
+      testingSessions: '25+',
+      iterationCycles: '8'
     },
     process: [
-      'Conducted contextual inquiries in 15+ operating rooms',
-      'Performed cognitive task analysis with surgical teams',
-      'Created user journey maps for 8 surgical specialties',
-      'Prototyped solutions using ProtoPie for realistic interactions'
+      'Connected Arduino boards to real medical cameras for authentic functionality',
+      'Created UI designs in Figma for embedded surgical interfaces',
+      'Built interactive logic and motion handling in ProtoPie',
+      'Integrated Arduino logic through ProtoPie Studio for hardware simulation',
+      'Conducted usability testing with surgeons to validate ergonomics and transitions'
     ],
     challenges: [
-      'High cognitive load during critical procedures',
-      'Complex multi-device interactions',
-      'Safety-critical environment requirements',
-      'Diverse surgical team needs'
+      'No existing precedent for Arduino-medical camera integration',
+      'Complex motion handling and transition requirements',
+      'Safety-critical medical environment constraints',
+      'Need for realistic prototyping in surgical context'
     ],
     solutions: [
-      'Simplified interface design with clear information hierarchy',
-      'Multi-device synchronization and coordination',
-      'Comprehensive safety protocols and fail-safes',
-      'Customizable workflows for different surgical specialties'
+      'Pioneered Arduino-medical camera integration methodology',
+      'Developed comprehensive motion and transition testing protocols',
+      'Created realistic surgical environment simulation',
+      'Implemented iterative design based on surgeon feedback'
     ]
   },
   {
     id: 'ai-pathology-platform',
     title: 'AI Pathology Platform',
-    subtitle: 'Healthcare AI Interface',
-    description: 'Designed AI-powered pathology tool enabling pathologists to create accurate prognosis based on machine learning data analysis and insights.',
-    fullDescription: 'Designed the user interface for an AI-powered pathology platform that helps pathologists analyze medical images and create accurate prognoses. The platform integrates machine learning algorithms with traditional pathology workflows, providing intelligent insights while maintaining the critical human oversight required in medical diagnosis.',
-    technologies: ['Figma', 'HTML', 'CSS', 'jQuery', 'Rapid Prototyping'],
+    subtitle: 'Digital Pathology AI Integration',
+    description: 'Created front-end coded interactive prototype for AI-powered pathology platform that converts analog methods to digital workflows.',
+    fullDescription: 'Developed a front-end coded interactive prototype for an AI pathology platform that digitizes traditional analog pathology methods. The platform integrates AI algorithms to analyze medical images and suggest improved patient prognoses by identifying patterns, anomalies, and correlations that human pathologists might miss, while maintaining critical human oversight in medical diagnosis.',
+    technologies: ['Figma', 'HTML', 'CSS', 'JavaScript', 'AI Integration'],
     category: 'Healthcare AI',
     year: 2023,
     status: 'completed' as const,
     thumbnailUrl: 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&h=600&fit=crop&q=80',
     demoUrl: '',
     highlights: [
-      'Improved diagnostic accuracy by 15%',
-      'Reduced pathology review time by 45%',
-      'Enhanced collaboration between pathologists',
-      'Streamlined reporting and documentation'
+      'Created front-end coded interactive prototype from design specs',
+      'Collaborated with front-end developers for seamless integration',
+      'Worked with data scientists and pathologists for testing',
+      'Converted analog pathology methods to digital workflows'
     ],
     metrics: {
-      performanceImprovement: '45%',
-      userIncrease: '15%',
-      timeToMarket: '8 months',
-      accuracyImprovement: '15%'
+      prototypeAccuracy: '100%',
+      stakeholderFeedback: '12+',
+      testingSessions: '20+',
+      integrationSuccess: '95%'
     },
     process: [
-      'Researched pathology workflows and pain points',
-      'Designed AI integration points and user feedback loops',
-      'Created intuitive data visualization and reporting tools',
-      'Conducted usability testing with practicing pathologists'
+      'Designed UI in Figma based on pathology workflow requirements',
+      'Coded interactive prototype using HTML, CSS, and JavaScript',
+      'Collaborated with front-end developers for code integration',
+      'Worked with data scientists on AI algorithm integration',
+      'Conducted testing with pathologists to validate interface usability'
     ],
     challenges: [
-      'Complex medical data visualization requirements',
-      'Integration with existing pathology workflows',
-      'Ensuring AI transparency and explainability',
-      'Maintaining diagnostic accuracy and reliability'
+      'Converting complex analog pathology workflows to digital interfaces',
+      'Integrating AI suggestions while maintaining human oversight',
+      'Ensuring prototype accuracy matches final development specs',
+      'Coordinating between design, development, and data science teams'
     ],
     solutions: [
-      'Intuitive data visualization and reporting interface',
-      'Seamless integration with existing pathology systems',
-      'Clear AI confidence indicators and explanations',
-      'Comprehensive quality assurance and validation processes'
+      'Created pixel-perfect coded prototypes that honor design specifications',
+      'Implemented AI integration that enhances rather than replaces human judgment',
+      'Established clear communication protocols between cross-functional teams',
+      'Developed iterative testing process with medical professionals'
     ]
   }
 ];
@@ -228,23 +230,23 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                 <Button
                   size="sm"
                   variant="secondary"
-                  className="bg-white/90 hover:bg-white text-gray-900 backdrop-blur-sm"
+                  className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
                   onClick={() => setShowModal(true)}
                 >
-                  <Eye size={16} className="mr-1" />
-                  View Details
+                  <Eye size={16} className="mr-2" />
+                  Learn More
                 </Button>
               </motion.div>
               {project.demoUrl && (
                 <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                  <Button
-                    size="sm"
-                    variant="secondary"
-                    className="bg-white/90 hover:bg-white text-gray-900 backdrop-blur-sm"
-                  >
-                    <ExternalLink size={16} className="mr-1" />
-                    Live Demo
-                  </Button>
+                                  <Button
+                  size="sm"
+                  variant="secondary"
+                  className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
+                >
+                  <ExternalLink size={16} className="mr-2" />
+                  Live Demo
+                </Button>
                 </motion.div>
               )}
             </div>
@@ -520,72 +522,212 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                   <div className="mt-6 p-4 bg-gray-700/50 rounded-lg border border-gray-600/50">
                     <h4 className="text-lg font-semibold mb-3 text-purple-300">Technology Stack Highlights</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-300">
-                      <div>
-                        <div className="font-medium text-purple-300 mb-2">Frontend Technologies</div>
-                        <div className="space-y-1">
-                          <div>• React, Vue, Angular for component libraries</div>
-                          <div>• Web Components for cross-framework compatibility</div>
-                          <div>• Responsive design with modern CSS frameworks</div>
-                        </div>
-                      </div>
-                      <div>
-                        <div className="font-medium text-purple-300 mb-2">Design Tools</div>
-                        <div className="space-y-1">
-                          <div>• Figma for design system creation</div>
-                          <div>• Component-driven design methodology</div>
-                          <div>• Design token implementation</div>
-                        </div>
-                      </div>
+                      {project.id === 'security-screening-platform' ? (
+                        <>
+                          <div>
+                            <div className="font-medium text-purple-300 mb-2">Frontend Technologies</div>
+                            <div className="space-y-1">
+                              <div>• React, Vue, Angular for component libraries</div>
+                              <div>• Web Components for cross-framework compatibility</div>
+                              <div>• Responsive design with modern CSS frameworks</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div className="font-medium text-purple-300 mb-2">Design Tools</div>
+                            <div className="space-y-1">
+                              <div>• Figma for design system creation</div>
+                              <div>• Component-driven design methodology</div>
+                              <div>• Design token implementation</div>
+                            </div>
+                          </div>
+                        </>
+                      ) : project.id === 'surgical-technology-interface' ? (
+                        <>
+                          <div>
+                            <div className="font-medium text-purple-300 mb-2">Prototyping Tools</div>
+                            <div className="space-y-1">
+                              <div>• Figma for UI design and interface layouts</div>
+                              <div>• ProtoPie for interactive logic and motion handling</div>
+                              <div>• ProtoPie Studio for Arduino integration</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div className="font-medium text-purple-300 mb-2">Development & Hardware</div>
+                            <div className="space-y-1">
+                              <div>• Python for embedded software logic</div>
+                              <div>• QT framework for medical device interfaces</div>
+                              <div>• Arduino boards for hardware simulation</div>
+                            </div>
+                          </div>
+                        </>
+                      ) : project.id === 'ai-pathology-platform' ? (
+                        <>
+                          <div>
+                            <div className="font-medium text-purple-300 mb-2">Prototyping & Design</div>
+                            <div className="space-y-1">
+                              <div>• Figma for UI design and pathology workflows</div>
+                              <div>• HTML/CSS/JavaScript for interactive prototypes</div>
+                              <div>• Front-end coded prototypes for seamless integration</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div className="font-medium text-purple-300 mb-2">AI Integration & Testing</div>
+                            <div className="space-y-1">
+                              <div>• AI algorithm integration for medical image analysis</div>
+                              <div>• Collaboration with data scientists and pathologists</div>
+                              <div>• Usability testing with medical professionals</div>
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <div>
+                            <div className="font-medium text-purple-300 mb-2">Prototyping Tools</div>
+                            <div className="space-y-1">
+                              <div>• Figma for UI design and interface layouts</div>
+                              <div>• ProtoPie for interactive logic and motion handling</div>
+                              <div>• ProtoPie Studio for Arduino integration</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div className="font-medium text-purple-300 mb-2">Development & Hardware</div>
+                            <div className="space-y-1">
+                              <div>• Python for embedded software logic</div>
+                              <div>• QT framework for medical device interfaces</div>
+                              <div>• Arduino boards for hardware simulation</div>
+                            </div>
+                          </div>
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Visual Design System Preview */}
-              <div className="bg-gradient-to-r from-blue-900/20 to-indigo-900/20 rounded-xl p-6 border border-blue-700/30">
-                <h3 className="text-2xl font-bold mb-6 text-white flex items-center">
-                  <Eye className="w-6 h-6 mr-3 text-blue-400" />
-                  Design System Preview
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="text-center">
-                    <div className="w-24 h-24 mx-auto mb-3 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
-                      <Layers className="w-12 h-12 text-white" />
+              {/* Project-Specific Preview Section */}
+              {project.id === 'security-screening-platform' ? (
+                <div className="bg-gradient-to-r from-blue-900/20 to-indigo-900/20 rounded-xl p-6 border border-blue-700/30">
+                  <h3 className="text-2xl font-bold mb-6 text-white flex items-center">
+                    <Eye className="w-6 h-6 mr-3 text-blue-400" />
+                    Design System Preview
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="text-center">
+                      <div className="w-24 h-24 mx-auto mb-3 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
+                        <Layers className="w-12 h-12 text-white" />
+                      </div>
+                      <h4 className="text-lg font-semibold text-blue-300 mb-2">Component Library</h4>
+                      <p className="text-gray-300 text-sm">200+ reusable components with consistent design patterns</p>
                     </div>
-                    <h4 className="text-lg font-semibold text-blue-300 mb-2">Component Library</h4>
-                    <p className="text-gray-300 text-sm">200+ reusable components with consistent design patterns</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-24 h-24 mx-auto mb-3 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center">
-                      <Target className="w-12 h-12 text-white" />
+                    <div className="text-center">
+                      <div className="w-24 h-24 mx-auto mb-3 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center">
+                        <Target className="w-12 h-12 text-white" />
+                      </div>
+                      <h4 className="text-lg font-semibold text-green-300 mb-2">Design Tokens</h4>
+                      <p className="text-gray-300 text-sm">Centralized design system with scalable design tokens</p>
                     </div>
-                    <h4 className="text-lg font-semibold text-green-300 mb-2">Design Tokens</h4>
-                    <p className="text-gray-300 text-sm">Centralized design system with scalable design tokens</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-24 h-24 mx-auto mb-3 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center">
-                      <Users className="w-12 h-12 text-white" />
+                    <div className="text-center">
+                      <div className="w-24 h-24 mx-auto mb-3 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center">
+                        <Users className="w-12 h-12 text-white" />
+                      </div>
+                      <h4 className="text-lg font-semibold text-purple-300 mb-2">Team Adoption</h4>
+                      <p className="text-gray-300 text-sm">95% adoption rate across 15+ product teams</p>
                     </div>
-                    <h4 className="text-lg font-semibold text-purple-300 mb-2">Team Adoption</h4>
-                    <p className="text-gray-300 text-sm">95% adoption rate across 15+ product teams</p>
                   </div>
                 </div>
-              </div>
+              ) : project.id === 'surgical-technology-interface' ? (
+                <div className="bg-gradient-to-r from-blue-900/20 to-indigo-900/20 rounded-xl p-6 border border-blue-700/30">
+                  <h3 className="text-2xl font-bold mb-6 text-white flex items-center">
+                    <Eye className="w-6 h-6 mr-3 text-blue-400" />
+                    Prototyping & Testing Preview
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="text-center">
+                      <div className="w-24 h-24 mx-auto mb-3 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
+                        <Code className="w-12 h-12 text-white" />
+                      </div>
+                      <h4 className="text-lg font-semibold text-blue-300 mb-2">Arduino Integration</h4>
+                      <p className="text-gray-300 text-sm">First-ever connection of Arduino boards to real medical cameras</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-24 h-24 mx-auto mb-3 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center">
+                        <Users className="w-12 h-12 text-white" />
+                      </div>
+                      <h4 className="text-lg font-semibold text-green-300 mb-2">Surgeon Testing</h4>
+                      <p className="text-gray-300 text-sm">Real usability testing with surgeons in operating room environments</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-24 h-24 mx-auto mb-3 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center">
+                        <Zap className="w-12 h-12 text-white" />
+                      </div>
+                      <h4 className="text-lg font-semibold text-purple-300 mb-2">Motion Analysis</h4>
+                      <p className="text-gray-300 text-sm">Comprehensive ergonomics and transition testing for surgical workflows</p>
+                    </div>
+                  </div>
+                </div>
+              ) : project.id === 'ai-pathology-platform' ? (
+                <div className="bg-gradient-to-r from-blue-900/20 to-indigo-900/20 rounded-xl p-6 border border-blue-700/30">
+                  <h3 className="text-2xl font-bold mb-6 text-white flex items-center">
+                    <Eye className="w-6 h-6 mr-3 text-blue-400" />
+                    AI Pathology Integration Preview
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="text-center">
+                      <div className="w-24 h-24 mx-auto mb-3 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
+                        <Code className="w-12 h-12 text-white" />
+                      </div>
+                      <h4 className="text-lg font-semibold text-blue-300 mb-2">Front-End Prototype</h4>
+                      <p className="text-gray-300 text-sm">Coded interactive prototype using HTML, CSS, and JavaScript</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-24 h-24 mx-auto mb-3 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center">
+                        <Brain className="w-12 h-12 text-white" />
+                      </div>
+                      <h4 className="text-lg font-semibold text-green-300 mb-2">AI Integration</h4>
+                      <p className="text-gray-300 text-sm">Machine learning algorithms for medical image analysis and prognosis</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-24 h-24 mx-auto mb-3 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center">
+                        <Users className="w-12 h-12 text-white" />
+                      </div>
+                      <h4 className="text-lg font-semibold text-purple-300 mb-2">Medical Validation</h4>
+                      <p className="text-gray-300 text-sm">Testing with pathologists and data scientists for accuracy</p>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="bg-gradient-to-r from-blue-900/20 to-indigo-900/20 rounded-xl p-6 border border-blue-700/30">
+                  <h3 className="text-2xl font-bold mb-6 text-white flex items-center">
+                    <Eye className="w-6 h-6 mr-3 text-blue-400" />
+                    Project Preview
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="text-center">
+                      <div className="w-24 h-24 mx-auto mb-3 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
+                        <Code className="w-12 h-12 text-white" />
+                      </div>
+                      <h4 className="text-lg font-semibold text-blue-300 mb-2">Development</h4>
+                      <p className="text-gray-300 text-sm">Custom development and implementation</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-24 h-24 mx-auto mb-3 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center">
+                        <Target className="w-12 h-12 text-white" />
+                      </div>
+                      <h4 className="text-lg font-semibold text-green-300 mb-2">Testing</h4>
+                      <p className="text-gray-300 text-sm">Comprehensive testing and validation</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-24 h-24 mx-auto mb-3 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center">
+                        <Users className="w-12 h-12 text-white" />
+                      </div>
+                      <h4 className="text-lg font-semibold text-purple-300 mb-2">Deployment</h4>
+                      <p className="text-gray-300 text-sm">Successful project delivery and launch</p>
+                    </div>
+                  </div>
+                </div>
+              )}
 
-              {/* Call to Action */}
-              <div className="text-center py-8">
-                <div className="bg-gradient-to-r from-cyan-900/30 to-blue-900/30 rounded-xl p-6 border border-cyan-700/50">
-                  <h3 className="text-xl font-bold text-white mb-3">Ready to discuss this project?</h3>
-                  <p className="text-gray-300 mb-4">Let's explore how I can bring similar UX excellence to your team</p>
-                  <Button 
-                    className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-3 font-semibold"
-                    onClick={() => setShowModal(false)}
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    View Portfolio
-                  </Button>
-                </div>
-              </div>
+
             </div>
           </DialogContent>
         </Dialog>
