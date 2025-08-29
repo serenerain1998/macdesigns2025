@@ -146,25 +146,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-sm text-gray-500">
-            Built with React, Tailwind CSS, and thoughtful UX principles
-          </div>
-          
-          <Button 
-            onClick={() => {
-              console.log('🎯 Back to Top button clicked!');
-              scrollToTop();
-            }}
-            variant="ghost"
-            className="text-gray-400 hover:text-white hover:bg-gray-800 mt-4 md:mt-0 transition-all duration-300 hover:scale-105 group"
-            title="Scroll to top of page"
-          >
-            <span className="group-hover:translate-y-[-2px] transition-transform duration-300">
-              Back to Top
-            </span>
-            <ArrowUp className="ml-2 size-4 group-hover:-translate-y-1 transition-transform duration-300" />
-          </Button>
+        <div className="mt-8 pt-8 border-t border-gray-800">
+          {/* Footer section - content removed as requested */}
         </div>
       </div>
       

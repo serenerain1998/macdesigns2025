@@ -9,6 +9,7 @@ import { queryClient } from './services/queryClient';
 
 // Component imports
 import { PasswordGate } from './components/PasswordGate';
+import { SecurityMiddleware } from './components/SecurityMiddleware';
 import { Navigation } from './components/Navigation';
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
@@ -449,11 +450,26 @@ function AppContent() {
       document.documentElement.classList.add('dark');
     }
 
-    // Check authentication
-    const authenticated = sessionStorage.getItem('macdesigns_authenticated');
-    if (authenticated === 'true') {
+      // Check authentication with enhanced security
+  const authenticated = sessionStorage.getItem('macdesigns_authenticated');
+  const authTimestamp = sessionStorage.getItem('macdesigns_auth_timestamp');
+  
+  if (authenticated === 'true' && authTimestamp) {
+    const now = Date.now();
+    const authTime = parseInt(authTimestamp);
+    const sessionTimeout = 30 * 60 * 1000; // 30 minutes
+    
+    if (now - authTime < sessionTimeout) {
       setIsAuthenticated(true);
+      // Refresh timestamp
+      sessionStorage.setItem('macdesigns_auth_timestamp', now.toString());
+    } else {
+      // Session expired
+      sessionStorage.removeItem('macdesigns_authenticated');
+      sessionStorage.removeItem('macdesigns_auth_timestamp');
+      console.warn('🔒 SECURITY: Session expired due to inactivity');
     }
+  }
 
     // Mobile scroll fixes
     if (isMobile) {
@@ -473,10 +489,54 @@ function AppContent() {
   }, [isMobile]);
 
   const handleAuthenticate = () => {
-    console.log('Authentication successful');
+    console.log('🔓 SECURITY: Authentication successful');
     setIsAuthenticated(true);
     sessionStorage.setItem('macdesigns_authenticated', 'true');
+    sessionStorage.setItem('macdesigns_auth_timestamp', Date.now().toString());
   };
+
+  // Session monitoring and security
+  useEffect(() => {
+    if (!isAuthenticated) return;
+
+    // Monitor user activity
+    let activityTimeout: NodeJS.Timeout;
+    
+    const resetActivityTimer = () => {
+      clearTimeout(activityTimeout);
+      activityTimeout = setTimeout(() => {
+        // Session timeout after 30 minutes of inactivity
+        console.warn('🔒 SECURITY: Session timeout due to inactivity');
+        sessionStorage.removeItem('macdesigns_authenticated');
+        sessionStorage.removeItem('macdesigns_auth_timestamp');
+        setIsAuthenticated(false);
+      }, 30 * 60 * 1000); // 30 minutes
+    };
+
+    // Reset timer on user activity
+    const handleUserActivity = () => {
+      resetActivityTimer();
+      // Refresh auth timestamp
+      sessionStorage.setItem('macdesigns_auth_timestamp', Date.now().toString());
+    };
+
+    // Monitor various user activities
+    const events = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart', 'click'];
+    events.forEach(event => {
+      document.addEventListener(event, handleUserActivity, { passive: true });
+    });
+
+    // Start initial timer
+    resetActivityTimer();
+
+    // Cleanup
+    return () => {
+      clearTimeout(activityTimeout);
+      events.forEach(event => {
+        document.removeEventListener(event, handleUserActivity);
+      });
+    };
+  }, [isAuthenticated]);
 
   if (isLoading) {
     return (
@@ -495,93 +555,95 @@ function AppContent() {
   }
 
   return (
-    <motion.div 
-      ref={containerRef}
-              className={`min-h-screen bg-gray-50 dark:bg-gray-900 relative overflow-x-hidden ${
-        isMobile ? 'touch-pan-y' : ''
-      }`}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      style={{
-        WebkitOverflowScrolling: 'touch',
-        touchAction: 'auto',
-        overflowY: 'auto',
-      }}
-    >
-      {/* Progress Bar */}
-      <SimpleProgressBar />
-
-      {/* Background */}
-      <SimpleBackground />
-
-      {/* Navigation */}
-      <motion.div
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ 
-          duration: 0.6, 
-          delay: 0.1, 
-          ease: "easeOut" 
+    <SecurityMiddleware>
+      <motion.div 
+        ref={containerRef}
+                className={`min-h-screen bg-gray-50 dark:bg-gray-900 relative overflow-x-hidden ${
+          isMobile ? 'touch-pan-y' : ''
+        }`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        style={{
+          WebkitOverflowScrolling: 'touch',
+          touchAction: 'auto',
+          overflowY: 'auto',
         }}
       >
-        <Navigation />
+        {/* Progress Bar */}
+        <SimpleProgressBar />
+
+        {/* Background */}
+        <SimpleBackground />
+
+        {/* Navigation */}
+        <motion.div
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ 
+            duration: 0.6, 
+            delay: 0.1, 
+            ease: "easeOut" 
+          }}
+        >
+          <Navigation />
+        </motion.div>
+
+        {/* Main Content with Enhanced Repeating Animations */}
+        <main className="relative z-10" style={{ touchAction: 'auto' }}>
+          <SectionTransition index={0} id="hero">
+            <HeroSection />
+          </SectionTransition>
+
+          <SectionTransition index={1} id="about">
+            <AboutSection />
+          </SectionTransition>
+
+          <SectionTransition index={2} id="work">
+            <WorkSection />
+          </SectionTransition>
+
+          <SectionTransition index={3} id="skills">
+            <SkillsSection />
+          </SectionTransition>
+
+          <SectionTransition index={4} id="case-studies">
+            <CaseStudiesSection />
+          </SectionTransition>
+
+          <SectionTransition index={5} id="contact">
+            <ContactSection />
+          </SectionTransition>
+        </main>
+
+        {/* Footer with Repeating Animation */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: [0.21, 1.11, 0.81, 0.99] }}
+        >
+          <Footer />
+        </motion.div>
+        
+        {/* AI Avatar */}
+        <motion.div
+          initial={{ scale: 0, rotate: -180 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ 
+            duration: 0.8, 
+            delay: 1.2, 
+            type: "spring", 
+            stiffness: 100 
+          }}
+        >
+          <AIAvatar />
+        </motion.div>
+
+        {/* Toast Notifications */}
+        <Toaster />
       </motion.div>
-
-      {/* Main Content with Enhanced Repeating Animations */}
-      <main className="relative z-10" style={{ touchAction: 'auto' }}>
-        <SectionTransition index={0} id="hero">
-          <HeroSection />
-        </SectionTransition>
-
-        <SectionTransition index={1} id="about">
-          <AboutSection />
-        </SectionTransition>
-
-        <SectionTransition index={2} id="work">
-          <WorkSection />
-        </SectionTransition>
-
-        <SectionTransition index={3} id="skills">
-          <SkillsSection />
-        </SectionTransition>
-
-        <SectionTransition index={4} id="case-studies">
-          <CaseStudiesSection />
-        </SectionTransition>
-
-        <SectionTransition index={5} id="contact">
-          <ContactSection />
-        </SectionTransition>
-      </main>
-
-      {/* Footer with Repeating Animation */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.3 }}
-        transition={{ duration: 0.8, ease: [0.21, 1.11, 0.81, 0.99] }}
-      >
-        <Footer />
-      </motion.div>
-      
-      {/* AI Avatar */}
-      <motion.div
-        initial={{ scale: 0, rotate: -180 }}
-        animate={{ scale: 1, rotate: 0 }}
-        transition={{ 
-          duration: 0.8, 
-          delay: 1.2, 
-          type: "spring", 
-          stiffness: 100 
-        }}
-      >
-        <AIAvatar />
-      </motion.div>
-
-      {/* Toast Notifications */}
-      <Toaster />
-    </motion.div>
+    </SecurityMiddleware>
   );
 }
 
