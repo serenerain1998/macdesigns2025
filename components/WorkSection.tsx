@@ -360,76 +360,66 @@ const CarouselItemComponent = ({ project, index, isActive }: {
 
         {/* Case Study Modal */}
         <Dialog open={showModal} onOpenChange={setShowModal}>
-          <DialogContent className="w-[95vw] h-[90vh] max-w-none overflow-y-auto bg-gray-900 dark:bg-gray-900 border-gray-700 dark:border-gray-700 shadow-2xl !fixed !top-[50%] !left-[50%] !transform !-translate-x-1/2 !-translate-y-1/2">
-            <DialogHeader>
-              <DialogTitle className="text-3xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-2">
-                {project.title}
-              </DialogTitle>
-              <p className="text-gray-400 text-lg">{project.subtitle}</p>
-            </DialogHeader>
+          <DialogContent className="w-[95vw] h-[90vh] max-w-none overflow-y-auto bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border-gray-700 dark:border-gray-700 shadow-2xl !fixed !top-[50%] !left-[50%] !transform !-translate-x-1/2 !-translate-y-1/2">
+            {/* Hero Section with Project Header */}
+            <div className="relative mb-8">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-900/20 to-blue-900/20 rounded-t-lg"></div>
+              <DialogHeader className="relative z-10 pb-6">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <DialogTitle className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-3">
+                      {project.title}
+                    </DialogTitle>
+                    <p className="text-cyan-200 text-xl font-medium mb-4">{project.subtitle}</p>
+                    <div className="flex items-center space-x-4 text-sm text-gray-300">
+                      <span className="flex items-center">
+                        <Calendar className="w-4 h-4 mr-2 text-cyan-400" />
+                        {project.year}
+                      </span>
+                      <span className="flex items-center">
+                        <CheckCircle2 className="w-4 h-4 mr-2 text-green-400" />
+                        {project.status}
+                      </span>
+                      <span className="flex items-center">
+                        <Layers className="w-4 h-4 mr-2 text-blue-400" />
+                        {project.category}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex space-x-2">
+                    <Badge variant="outline" className="bg-cyan-900/30 border-cyan-500 text-cyan-300 px-4 py-2">
+                      <Sparkles className="w-4 h-4 mr-2" />
+                      Case Study
+                    </Badge>
+                  </div>
+                </div>
+              </DialogHeader>
+            </div>
             
-            <div className="space-y-8">
-              {/* Project Overview */}
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-white border-b border-gray-700 pb-2">Overview</h3>
-                <p className="text-gray-300 leading-relaxed text-lg">
+            <div className="space-y-8 px-2">
+              {/* Executive Summary - Impact First */}
+              <div className="bg-gradient-to-r from-cyan-900/20 to-blue-900/20 rounded-xl p-6 border border-cyan-700/30">
+                <h3 className="text-2xl font-bold mb-4 text-white flex items-center">
+                  <TrendingUp className="w-6 h-6 mr-3 text-cyan-400" />
+                  Executive Summary
+                </h3>
+                <p className="text-gray-200 leading-relaxed text-lg mb-4">
                   {project.fullDescription}
                 </p>
-              </div>
-
-              {/* Technologies Used */}
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-white border-b border-gray-700 pb-2">Technologies Used</h3>
-                <div className="flex flex-wrap gap-3">
-                  {project.technologies.map((tech) => (
-                    <Badge 
-                      key={tech}
-                      variant="outline"
-                      className="bg-cyan-900/30 border-cyan-600 text-cyan-300 hover:bg-cyan-800/40 px-4 py-2 text-sm"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-
-              {/* Key Achievements */}
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-white border-b border-gray-700 pb-2 flex items-center">
-                  <Award className="w-5 h-5 mr-3 text-cyan-400" />
-                  Key Achievements
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {project.highlights.map((highlight, i) => (
-                    <motion.div
-                      key={i}
-                      className="flex items-start space-x-3 p-4 bg-gray-800/50 border border-gray-700 rounded-lg hover:bg-gray-800/70 transition-colors"
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.1 }}
-                    >
-                      <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-300">{highlight}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Metrics */}
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-white border-b border-gray-700 pb-2">Key Metrics</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
                   {Object.entries(project.metrics).map(([key, value], i) => (
                     <motion.div
                       key={key}
-                      className="flex flex-col items-center justify-center text-center p-6 bg-gradient-to-br from-cyan-900/30 to-blue-900/30 rounded-lg border border-cyan-700/50 hover:border-cyan-600 transition-colors min-h-[120px]"
-                      whileHover={{ scale: 1.05, y: -2 }}
+                      className="flex flex-col items-center justify-center text-center p-4 bg-gradient-to-br from-cyan-800/40 to-blue-800/40 rounded-lg border border-cyan-600/50 hover:border-cyan-500 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/20"
+                      whileHover={{ y: -5 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.1 }}
                     >
-                      <div className="text-3xl font-bold text-cyan-400 mb-3">
+                      <div className="text-2xl font-bold text-cyan-300 mb-2">
                         {value}
                       </div>
-                      <div className="text-sm text-gray-300 capitalize leading-tight">
+                      <div className="text-xs text-cyan-100 capitalize leading-tight font-medium">
                         {key.replace(/([A-Z])/g, ' $1').trim()}
                       </div>
                     </motion.div>
@@ -437,22 +427,163 @@ const CarouselItemComponent = ({ project, index, isActive }: {
                 </div>
               </div>
 
-              {/* Process */}
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-white border-b border-gray-700 pb-2">Process</h3>
-                <div className="space-y-3">
-                  {project.process.map((step, index) => (
+              {/* UX Process & Methodology */}
+              <div className="bg-gray-800/30 rounded-xl p-6 border border-gray-700/50">
+                <h3 className="text-2xl font-bold mb-6 text-white flex items-center">
+                  <Brain className="w-6 h-6 mr-3 text-blue-400" />
+                  UX Process & Methodology
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="text-lg font-semibold mb-4 text-cyan-300 border-b border-cyan-700/50 pb-2">Design Process</h4>
+                    <div className="space-y-3">
+                      {project.process.map((step, index) => (
+                        <motion.div
+                          key={index}
+                          className="flex items-start space-x-3 p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700/70 transition-colors border-l-4 border-cyan-500"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.1 }}
+                        >
+                          <div className="w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-blue-400 flex-shrink-0 mt-0.5 flex items-center justify-center text-xs font-bold text-white">
+                            {index + 1}
+                          </div>
+                          <span className="text-gray-200">{step}</span>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-4 text-cyan-300 border-b border-cyan-700/50 pb-2">Challenges & Solutions</h4>
+                    <div className="space-y-4">
+                      {project.challenges.map((challenge, index) => (
+                        <motion.div
+                          key={index}
+                          className="p-3 bg-red-900/20 border border-red-700/30 rounded-lg"
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.1 }}
+                        >
+                          <div className="text-sm text-red-300 font-medium mb-2">Challenge {index + 1}</div>
+                          <div className="text-gray-300 text-sm">{challenge}</div>
+                          <div className="text-sm text-green-300 font-medium mt-2">Solution:</div>
+                          <div className="text-gray-300 text-sm">{project.solutions[index]}</div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Key Achievements & Impact */}
+              <div className="bg-gradient-to-r from-green-900/20 to-emerald-900/20 rounded-xl p-6 border border-green-700/30">
+                <h3 className="text-2xl font-bold mb-6 text-white flex items-center">
+                  <Award className="w-6 h-6 mr-3 text-green-400" />
+                  Key Achievements & Impact
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {project.highlights.map((highlight, i) => (
                     <motion.div
-                      key={index}
-                      className="flex items-start space-x-4 p-3 bg-gray-800/30 rounded-lg hover:bg-gray-800/50 transition-colors"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
+                      key={i}
+                      className="flex items-start space-x-3 p-4 bg-green-800/20 border border-green-700/40 rounded-lg hover:bg-green-800/30 transition-all duration-300 hover:scale-105"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.1 }}
                     >
-                      <div className="w-3 h-3 rounded-full bg-gradient-to-r from-cyan-400 to-blue-400 flex-shrink-0 mt-2" />
-                      <span className="text-gray-300">{step}</span>
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-green-400 to-emerald-400 flex items-center justify-center flex-shrink-0">
+                        <CheckCircle2 className="w-5 h-5 text-white" />
+                      </div>
+                      <span className="text-gray-200 font-medium">{highlight}</span>
                     </motion.div>
                   ))}
+                </div>
+              </div>
+
+              {/* Technical Implementation */}
+              <div className="bg-gray-800/30 rounded-xl p-6 border border-gray-700/50">
+                <h3 className="text-2xl font-bold mb-6 text-white flex items-center">
+                  <Code className="w-6 h-6 mr-3 text-purple-400" />
+                  Technical Implementation
+                </h3>
+                <div className="space-y-4">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    {project.technologies.map((tech) => (
+                      <Badge 
+                        key={tech}
+                        variant="outline"
+                        className="bg-purple-900/30 border-purple-600 text-purple-300 hover:bg-purple-800/40 px-4 py-2 text-sm font-medium transition-all duration-300 hover:scale-105"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                  <div className="mt-6 p-4 bg-gray-700/50 rounded-lg border border-gray-600/50">
+                    <h4 className="text-lg font-semibold mb-3 text-purple-300">Technology Stack Highlights</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-300">
+                      <div>
+                        <div className="font-medium text-purple-300 mb-2">Frontend Technologies</div>
+                        <div className="space-y-1">
+                          <div>• React, Vue, Angular for component libraries</div>
+                          <div>• Web Components for cross-framework compatibility</div>
+                          <div>• Responsive design with modern CSS frameworks</div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="font-medium text-purple-300 mb-2">Design Tools</div>
+                        <div className="space-y-1">
+                          <div>• Figma for design system creation</div>
+                          <div>• Component-driven design methodology</div>
+                          <div>• Design token implementation</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Visual Design System Preview */}
+              <div className="bg-gradient-to-r from-blue-900/20 to-indigo-900/20 rounded-xl p-6 border border-blue-700/30">
+                <h3 className="text-2xl font-bold mb-6 text-white flex items-center">
+                  <Eye className="w-6 h-6 mr-3 text-blue-400" />
+                  Design System Preview
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="text-center">
+                    <div className="w-24 h-24 mx-auto mb-3 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
+                      <Layers className="w-12 h-12 text-white" />
+                    </div>
+                    <h4 className="text-lg font-semibold text-blue-300 mb-2">Component Library</h4>
+                    <p className="text-gray-300 text-sm">200+ reusable components with consistent design patterns</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-24 h-24 mx-auto mb-3 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center">
+                      <Target className="w-12 h-12 text-white" />
+                    </div>
+                    <h4 className="text-lg font-semibold text-green-300 mb-2">Design Tokens</h4>
+                    <p className="text-gray-300 text-sm">Centralized design system with scalable design tokens</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-24 h-24 mx-auto mb-3 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center">
+                      <Users className="w-12 h-12 text-white" />
+                    </div>
+                    <h4 className="text-lg font-semibold text-purple-300 mb-2">Team Adoption</h4>
+                    <p className="text-gray-300 text-sm">95% adoption rate across 15+ product teams</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Call to Action */}
+              <div className="text-center py-8">
+                <div className="bg-gradient-to-r from-cyan-900/30 to-blue-900/30 rounded-xl p-6 border border-cyan-700/50">
+                  <h3 className="text-xl font-bold text-white mb-3">Ready to discuss this project?</h3>
+                  <p className="text-gray-300 mb-4">Let's explore how I can bring similar UX excellence to your team</p>
+                  <Button 
+                    className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-3 font-semibold"
+                    onClick={() => setShowModal(false)}
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    View Portfolio
+                  </Button>
                 </div>
               </div>
             </div>
