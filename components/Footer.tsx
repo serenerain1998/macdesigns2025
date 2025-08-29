@@ -29,45 +29,69 @@ export function Footer() {
   }, []);
   const scrollToTop = () => {
     try {
-      console.log('Scroll to top clicked, current scroll position:', window.scrollY);
+      // Debug page dimensions and scroll state
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const bodyHeight = document.body.scrollHeight;
       
-      // Try multiple scroll methods for maximum compatibility
+      console.log('=== SCROLL DEBUG INFO ===');
+      console.log('Current scroll position:', scrollY);
+      console.log('Window height:', windowHeight);
+      console.log('Document height:', documentHeight);
+      console.log('Body height:', bodyHeight);
+      console.log('Can scroll:', documentHeight > windowHeight);
+      console.log('Scroll position > 0:', scrollY > 0);
       
-      // Method 1: Smooth scroll to top
-      if ('scrollBehavior' in document.documentElement.style) {
-        window.scrollTo({ 
-          top: 0, 
-          behavior: 'smooth' 
-        });
-        console.log('Method 1: Smooth scroll');
+      if (documentHeight <= windowHeight) {
+        console.log('⚠️ Page has no scrollable content!');
+        return;
       }
       
-      // Method 2: Scroll to top of document
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0; // For Safari
-      console.log('Method 2: Direct scrollTop');
+      if (scrollY === 0) {
+        console.log('✅ Already at top of page');
+        return;
+      }
       
-      // Method 3: Window scroll
+      // Force enable scrolling by temporarily removing CSS restrictions
+      const originalOverflow = document.documentElement.style.overflow;
+      const originalBodyOverflow = document.body.style.overflow;
+      
+      // Temporarily remove overflow restrictions
+      document.documentElement.style.overflow = 'auto';
+      document.body.style.overflow = 'auto';
+      
+      // Method 1: Force scroll to top with multiple approaches
       window.scrollTo(0, 0);
-      console.log('Method 3: Window scroll');
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
       
-      // Method 4: Scroll into view for body
-      document.body.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      console.log('Method 4: Scroll into view');
+      // Method 2: Use requestAnimationFrame for smooth scroll
+      requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      });
       
-      // Method 5: Fallback with timeout
+      // Method 3: Force scroll with timeout
       setTimeout(() => {
-        if (window.scrollY > 0) {
-          console.log('Fallback scroll triggered');
-          window.scrollTo(0, 0);
-          document.documentElement.scrollTop = 0;
-          document.body.scrollTop = 0;
-        }
-      }, 200);
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        
+        // Restore original overflow styles
+        document.documentElement.style.overflow = originalOverflow;
+        document.body.style.overflow = originalBodyOverflow;
+        
+        // Verify scroll worked
+        console.log('Final scroll position:', window.scrollY);
+      }, 100);
+      
+      console.log('All scroll methods executed');
       
     } catch (error) {
       console.error('Scroll error:', error);
-      // Final fallback to instant scroll
+      // Final fallback - force scroll
       window.scrollTo(0, 0);
       document.documentElement.scrollTop = 0;
       document.body.scrollTop = 0;
